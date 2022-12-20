@@ -75,6 +75,9 @@
 #### ■画面遷移図
 URLは[こちら](https://www.figma.com/file/byXYHVgoi48ftTHrX3LmpG/%E4%B8%80%E6%B1%81%EF%BC%8F%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0%3A1&t=DnZDzoEadONtC7uT-1)
 
+#### ER図
+URLは[こちら](https://i.gyazo.com/3d05e37fa38ddc50c7c528962852f0aa.png)
+
 #### ■スケジュール
 - 企画〜技術調査：12/25 〆切
 - README〜ER図作成：12/25 〆切
