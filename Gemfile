@@ -49,13 +49,13 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # UI/UX
-gem 'rails-i18n'
+gem "rails-i18n"
 
 # Model
-gem 'enum_help'
+gem "enum_help"
 
 # Table/Schema
-gem 'annotate'
+gem "annotate"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -64,13 +64,13 @@ group :development, :test do
   gem "binding_of_caller"
 
   # Test
-  gem 'factory_bot_rails'
-  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem "rspec-rails"
 
   # Code analize
-  gem 'rubocop', require: false
-  gem 'rubocop-rails', require: false
-  gem 'bullet'
+  gem "rubocop", require: false
+  gem "rubocop-rails", require: false
+  gem "bullet"
 end
 
 group :development do
@@ -85,7 +85,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
-  gem 'faker'
-  gem 'webdrivers'
+  gem "capybara"
+  gem "faker"
+  gem "webdrivers"
 end
