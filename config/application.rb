@@ -27,6 +27,10 @@ module Ichiju
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
 
+    # 言語設定
+    config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
