@@ -1,3 +1,12 @@
+---
+name: issueテンプレート
+about: issueを作成する際のテンプレートです。
+title: ''
+labels: ''
+assignees: draobfrus
+
+---
+
 ### 概要
 対応issueの概要を記載してください。
 
