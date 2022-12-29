@@ -1,4 +1,4 @@
-// エラー解消のため一時的にコメントアウト
+// エラー回避のためコメントアウト
 // import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
