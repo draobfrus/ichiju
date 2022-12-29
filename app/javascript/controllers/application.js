@@ -1,4 +1,4 @@
-// エラー解消のため一時的にコメントアウト
+// エラー回避のためコメントアウト
 // import { Application } from "@hotwired/stimulus"
 
 const application = Application.start()
