@@ -1,4 +1,5 @@
-import { Controller } from "@hotwired/stimulus"
+// エラー解消のため一時的にコメントアウト
+// import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   connect() {
