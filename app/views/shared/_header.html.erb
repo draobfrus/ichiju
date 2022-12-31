@@ -1,0 +1,25 @@
+<header>
+  <div class="navbar bg-accent text-accent-content">
+    <div class="navbar-start">
+      <%= link_to "一汁", "#", class: "btn btn-ghost normal-case text-xl rounded-full" %>
+    </div>
+    <div class="navbar-end">
+      <%= link_to "#", class: "btn btn-ghost normal-case rounded-full" do %>
+        <i class="fa-solid fa-2x fa-circle-question"></i>
+      <% end %>
+      <div class="dropdown dropdown-hover dropdown-end">
+        <div class="btn btn-ghost normal-case rounded-full">
+          <i class="fa-solid fa-2x fa-user"></i>
+        </div>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+          <li>
+            <%= link_to "ログアウト", "#" %>
+          </li>
+          <li>
+            <%= link_to "プロフィール", "#" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

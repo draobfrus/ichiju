@@ -2,6 +2,11 @@ module.exports = {
   plugins: [
     require('daisyui'),
   ],
+  daisyui: {
+    themes: [
+      "autumn"
+    ],
+  },
   content: [
     './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',
