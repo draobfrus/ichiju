@@ -3,7 +3,8 @@ module.exports = {
     require('daisyui'),
   ],
   daisyui: {
-    themes: ["autumn"
+    themes: [
+      "autumn"
     ],
   },
   content: [
