@@ -1,2 +1,36 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="grid grid-cols-1">
+  <div class="container mx-auto flex justify-center">
+    <div class="w-full max-w-lg my-20">
+      <h1 class="font-bold text-center text-accent-content mb-10">
+        新規登録
+      </h1>
+      <%= form_with model: @user, local: true do |f|%>
+        <div class="form-control mb-10">
+          <%= f.label :username, class: 'label text-accent-content font-bold' %>
+          <%= f.text_field :username, class: 'input input-accent' %>
+        </div>
+        <div class="form-control mb-10">
+          <%= f.label :email, class: 'label text-accent-content font-bold' %>
+          <%= f.email_field :email, class: 'input input-accent' %>
+        </div>
+        <div class="form-control mb-10">
+          <%= f.label :birthplace, class: 'label text-accent-content font-bold' %>
+          <%= f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name, { include_blank: true }, class: 'select select-accent' %>
+        </div>
+        <div class="form-control mb-10">
+          <%= f.label :living_place, class: 'label text-accent-content font-bold' %>
+          <%= f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name, { include_blank: true }, class: 'select select-accent' %>
+        </div>
+        <div class="form-control mb-10">
+          <%= f.label :password, class: 'label text-accent-content font-bold' %>
+          <%= f.password_field :password, class: 'input input-accent' %>
+        </div>
+        <div class="form-control mb-10">
+          <%= f.label :password_confirmation, class: 'label text-accent-content font-bold' %>
+          <%= f.password_field :password_confirmation, class: 'input input-accent' %>
+        </div>
+        <%= f.submit "登録", class: 'btn btn-block btn-primary mt-10'%>
+      <% end %>
+    </div>
+  </div>
+</div>
