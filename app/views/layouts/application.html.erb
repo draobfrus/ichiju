@@ -14,8 +14,11 @@
   </head>
 
   <body>
-    <%# <%= render partial: 'shared/before_login_header' %>
-    <%= render partial: 'shared/header' %>
+    <% if logged_in? %>
+      <%= render partial: 'shared/header' %>
+    <% else %>
+      <%= render partial: 'shared/before_login_header' %>
+    <% end %>
     <%= yield %>
     <%= render partial: 'shared/bottom_navbar' %>
   </body>
