@@ -1,7 +1,7 @@
 <header>
   <div class="navbar bg-accent text-accent-content">
     <div class="navbar-start">
-      <%= link_to "一汁", "#", class: "btn btn-ghost normal-case text-xl rounded-full" %>
+      <%= link_to t('defaults.ichiju'), root_path, class: "btn btn-ghost normal-case text-xl rounded-full" %>
     </div>
     <div class="navbar-end">
       <%= link_to "#", class: "btn btn-ghost normal-case rounded-full" do %>
@@ -13,10 +13,10 @@
         </div>
         <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
           <li>
-            <%= link_to "ログアウト", logout_path, data: { turbo_method: :delete } %>
+            <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete } %>
           </li>
           <li>
-            <%= link_to "プロフィール", "#" %>
+            <%= link_to t('defaults.profile'), "#" %>
           </li>
         </ul>
       </div>

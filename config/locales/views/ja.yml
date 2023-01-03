@@ -1,0 +1,16 @@
+ja:
+  defaults:
+    ichiju: "一汁"
+    login: "ログイン"
+    logout: "ログアウト"
+    register: "新規登録"
+    profile: "プロフィール"
+    home: "ホーム"
+    post: "投稿"
+    mypage: "マイページ"
+    terms_of_use: "利用規約"
+    privacy_policy: "プライバシーポリシー"
+    contact: "お問い合わせ"
+
+  users:
+    new:

@@ -16,7 +16,7 @@
             <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation),class: 'label text-accent-content font-bold' %>
             <%= f.password_field :password_confirmation, class: 'input input-accent' %>
           </div>
-          <%= f.submit "ログイン", class: 'btn btn-block btn-primary mt-10 mb-10'%>
+          <%= f.submit (t 'defaults.login'), class: 'btn btn-block btn-primary mt-10 mb-10'%>
         <% end %>
       </div>
     </div>
