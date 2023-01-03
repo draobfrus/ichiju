@@ -1,11 +1,11 @@
 <header>
   <div class="navbar bg-accent text-accent-content">
     <div class="navbar-start">
-      <%= link_to "一汁", "#", class: "btn btn-ghost normal-case text-xl rounded-full" %>
+      <%= link_to t('defaults.ichiju'), root_path, class: "btn btn-ghost normal-case text-xl rounded-full" %>
     </div>
     <div class="navbar-end">
-      <%= link_to "ログイン", login_path, class: "btn btn-ghost normal-case rounded-full" %>
-      <%= link_to "新規登録", new_user_path, class: "btn btn-ghost normal-case rounded-full" %>
+      <%= link_to t('defaults.login'), login_path, class: "btn btn-ghost normal-case rounded-full" %>
+      <%= link_to t('defaults.register'), new_user_path, class: "btn btn-ghost normal-case rounded-full" %>
     </div>
   </div>
 </header>
