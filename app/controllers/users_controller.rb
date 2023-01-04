@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to login_url, success: "ユーザー登録に成功しました"
+      redirect_to login_url, success: t('messages.success', word: t('defaults.register'))
     else
-      flash.now[:danger] = "ユーザー登録に失敗しました"
+      flash.now[:danger] = t('messages.danger', word: t('defaults.register'))
       render :new, status: :unprocessable_entity
     end
   end
