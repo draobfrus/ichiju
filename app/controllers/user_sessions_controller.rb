@@ -9,7 +9,8 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_back_or_to root_url, success: "ログインに成功しました"
     else
-      render :new
+      flash.now[:danger] = "ログインに失敗しました"
+      render :new, status: :unprocessable_entity
     end
   end
 
