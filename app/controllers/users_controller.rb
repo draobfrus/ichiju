@@ -6,7 +6,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
+
+    if @user.save
+      redirect_to login_url, success: "ユーザー登録に成功しました"
+    else
+      render :new
+    end
   end
 
   private
