@@ -6,7 +6,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
+
+    if @user.save
+      redirect_to login_url, success: t('messages.success', word: t('defaults.register'))
+    else
+      flash.now[:danger] = t('messages.danger', word: t('defaults.register'))
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
