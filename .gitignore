@@ -42,3 +42,7 @@
 # Node
 /node_modules
 yarn-error.log
+
+# Ignore uploaded files in development
+/public/images
+/public/uploads
