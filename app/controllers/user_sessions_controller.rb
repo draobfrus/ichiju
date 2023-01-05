@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
     @user = login(params[:email], params[:password])
 
     if @user
-      redirect_back_or_to root_url, success: t('messages.success', word: t('defaults.login'))
+      redirect_back_or_to posts_url, success: t('messages.success', word: t('defaults.login'))
     else
       flash.now[:danger] = t('messages.danger', word: t('defaults.login'))
       render :new, status: :unprocessable_entity
