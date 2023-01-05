@@ -1,0 +1,11 @@
+<div class="p-6">
+  <div class="card card-compact bg-stone-100 rounded-lg shadow-lg mb-2 sm:mb-4">
+    <%= link_to image_tag(post.image.url), class: 'w-full h-full object-cover object-center' %>
+  </div>
+  <div>
+    <%= link_to post.title, "#", class: 'text-primary hover:text-secondary md:text-lg font-bold' %>
+    <p class="text-accent-content text-sm md:text-base mb-3 md:mb-4">
+      Created by <%=link_to post.user.username, "#", class: 'hover:text-accent-focus'%>
+    </p>
+  </div>
+</div>
