@@ -7,6 +7,7 @@
           <h3 class="card-title text-2xl lg:text-3xl font-bold"><%= @post.title %></h2>
           <p>by <%=link_to @post.user.username, "#" %></p>
           <p><%= simple_format(@post.content) %></p>
+          <p class="flex justify-end mb-4"><%= I18n.l(@post.created_at, format: :long) %></p>
           <div class="flex gap-8 justify-end">
             <%= link_to "#" do %><i class="fa-solid fa-heart fa-2x"></i><% end %>
             <%= link_to "#" do %><i class="fa-solid fa-bookmark fa-2x"></i><% end %>
