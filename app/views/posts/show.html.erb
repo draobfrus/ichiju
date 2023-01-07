@@ -1,2 +1,30 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="bg-stone-100 p-4 m-4">
+  <div class="py-6 sm:py-8 lg:py-12">
+    <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="card max-w-xl border rounded-xl mx-auto">
+        <%= image_tag @post.image.url %>
+        <div class="card-body text-accent-content">
+          <h3 class="card-title text-2xl lg:text-3xl font-bold"><%= @post.title %></h2>
+          <p>by <%=link_to @post.user.username, "#" %></p>
+          <p><%= simple_format(@post.content) %></p>
+          <div class="flex gap-8 justify-end">
+            <%= link_to "#" do %><i class="fa-solid fa-heart fa-2x"></i><% end %>
+            <%= link_to "#" do %><i class="fa-solid fa-bookmark fa-2x"></i><% end %>
+          </div>
+        </div>
+      </div>
+      <div class="card-body text-accent-content">
+        <div class="card-actions justify-center gap-32">
+          <button class="btn gap-2 btn-outline btn-success lg:btn-lg">
+            <%= link_to "#" do %><i class="fa-solid fa-pen md:fa-2x"></i><% end %>
+            編集
+          </button>
+          <button class="btn gap-2 btn-outline btn-warning lg:btn-lg">
+            <%= link_to "#" do %><i class="fa-solid fa-trash md:fa-2x"></i><% end %>
+            削除
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
