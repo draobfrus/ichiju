@@ -14,6 +14,8 @@ ja:
   messages:
     success: "%{word}しました"
     danger: "%{word}できませんでした"
+    updated: "更新しました"
+    not_updated: "更新できませんでした"
 
   posts:
     new:

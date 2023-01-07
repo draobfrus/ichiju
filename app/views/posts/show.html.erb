@@ -15,14 +15,18 @@
       </div>
       <div class="card-body text-accent-content">
         <div class="card-actions justify-center gap-32">
-          <button class="btn gap-2 btn-outline btn-success lg:btn-lg">
-            <%= link_to "#" do %><i class="fa-solid fa-pen md:fa-2x"></i><% end %>
-            <%= t('.edit') %>
-          </button>
-          <button class="btn gap-2 btn-outline btn-warning lg:btn-lg">
-            <%= link_to "#" do %><i class="fa-solid fa-trash md:fa-2x"></i><% end %>
-            <%= t('.delete') %>
-          </button>
+          <%= link_to edit_post_path(@post) do %>
+            <button class="btn gap-2 btn-outline btn-success lg:btn-lg">
+              <i class="fa-solid fa-pen md:fa-2x"></i>
+              <%= t('.edit') %>
+            </button>
+          <% end %>
+          <%= link_to "#" do %>
+            <button class="btn gap-2 btn-outline btn-warning lg:btn-lg">
+              <i class="fa-solid fa-trash md:fa-2x"></i>
+              <%= t('.delete') %>
+            </button>
+          <% end %>
         </div>
       </div>
     </div>

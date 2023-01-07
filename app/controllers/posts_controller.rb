@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: %i[edit update destroy]
 
   def index
     @posts = Post.includes(:user).order(created_at: :desc)
@@ -23,10 +24,15 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
+    if @post.update(post_params)
+      redirect_to post_url(@post), success: t('messages.updated')
+    else
+      flash.now[:danger] = t('messages.not_updated')
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -36,5 +42,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content, :image, :image_cache)
+  end
+
+  def set_post
+    @post = current_user.posts.find(params[:id])
   end
 end
