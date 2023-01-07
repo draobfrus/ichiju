@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
+    @post.destroy!
     redirect_to posts_url, success: t('defaults.message.success', word: t('defaults.delete')), status: :see_other
   end
 
