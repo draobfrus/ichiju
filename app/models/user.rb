@@ -34,4 +34,8 @@ class User < ApplicationRecord
   include JpPrefecture
   jp_prefecture :birthplace_code, method_name: :birthplace
   jp_prefecture :living_place_code, method_name: :living_place
+
+  def own?(object)
+    id == object.user_id
+  end
 end

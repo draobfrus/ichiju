@@ -11,6 +11,22 @@ ja:
     terms_of_use: "利用規約"
     privacy_policy: "プライバシーポリシー"
     contact: "お問い合わせ"
-  messages:
-    success: "%{word}しました"
-    danger: "%{word}できませんでした"
+    edit: "編集"
+    update: "更新"
+    delete: "削除"
+    message:
+      require_login: "ログインしてください"
+      success: "%{word}しました"
+      danger: "%{word}できませんでした"
+      updated: "更新しました"
+      not_updated: "更新できませんでした"
+      deleted: "削除しました"
+      delete?: "削除しますか？"
+      are_you_sure: "%{word}してよろしいですか？"
+  posts:
+    new:
+      title: "投稿作成"
+    show:
+      title: "投稿詳細"
+    edit:
+      title: "投稿編集"

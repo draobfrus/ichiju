@@ -1,20 +1,14 @@
 <div class="btm-nav fixed bottom-0 left-0 right-0">
-  <button class="text-accent-content hover:bg-accent active:bg-accent-focus rounded-full">
-    <%= link_to "#" do %>
-      <i class="fa-solid fa-house-chimney"></i>
-    <% end %>
+  <%= link_to posts_path, class: 'hover:bg-accent active:bg-accent-focus rounded-full text-accent-content' do %>
+    <button class="fa-solid fa-house-chimney"></button>
     <span class="btm-nav-label"><%= t('defaults.home') %></span>
-  </button>
-  <button class="text-accent-content hover:bg-accent active:bg-accent-focus rounded-full">
-    <%= link_to "#" do %>
-      <i class="fa-solid fa-camera"></i>
-    <% end %>
+  <% end %>
+  <%= link_to new_post_path, class: 'hover:bg-accent active:bg-accent-focus rounded-full text-accent-content' do %>
+    <button class="fa-solid fa-camera"></button>
     <span class="btm-nav-label"><%= t('defaults.post') %></span>
-  </button>
-  <button class="text-accent-content hover:bg-accent active:bg-accent-focus rounded-full">
-    <%= link_to "#" do %>
-      <i class="fa-solid fa-calendar-days"></i>
-    <% end %>
+  <% end %>
+  <%= link_to "#", class: 'hover:bg-accent active:bg-accent-focus rounded-full text-accent-content' do %>
+    <button class="fa-solid fa-calendar-days"></button>
     <span class="btm-nav-label"><%= t('defaults.mypage') %></span>
-  </button>
+  <% end %>
 </div>

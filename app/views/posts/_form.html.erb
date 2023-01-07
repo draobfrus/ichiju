@@ -1,0 +1,19 @@
+<%= form_with model: @post, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="flex flex-col bg-stone-50 gap-4 p-4 md:p-8">
+    <div class="form-control mb-2">
+      <%= f.label :title, class: 'label text-accent-content font-bold' %>
+      <%= f.text_field :title, class: 'input input-accent w-full' %>
+    </div>
+    <div class="form-control mb-2">
+      <%= f.label :content, class: 'label text-accent-content font-bold' %>
+      <%= f.text_area :content, class: 'textarea textarea-accent w-full' %>
+    </div>
+    <div class="form-control mb-2">
+      <%= f.label :image, class: 'label text-accent-content font-bold' %>
+      <%= f.file_field :image, class: 'file-input file-input-accent w-full' %>
+      <%= f.hidden_field :image_cache %>
+    </div>
+    <%= f.submit t('defaults.post'), class: 'btn btn-block btn-primary mt-10 mb-10'%>
+  </div>
+<% end %>
