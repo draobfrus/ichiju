@@ -12,6 +12,10 @@ ja:
         birthplace_code: "出身地"
         living_place_code: "居住地"
         role: "権限"
+      post:
+        title: "タイトル"
+        content: "本文"
+        image: "写真"
   attributes:
     id: "ID"
     created_at: "作成日時"
