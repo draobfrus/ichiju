@@ -1,20 +1,29 @@
 <div class="btm-nav fixed bottom-0 left-0 right-0">
-  <button class="text-accent-content hover:bg-accent active:bg-accent-focus rounded-full">
-    <%= link_to "#" do %>
+  <% if logged_in? %>
+    <%= link_to posts_path, class: 'hover:bg-accent active:bg-accent-focus rounded-full' do %>
+    <button class="text-accent-content">
       <i class="fa-solid fa-house-chimney"></i>
-    <% end %>
+    </button>
     <span class="btm-nav-label"><%= t('defaults.home') %></span>
-  </button>
-  <button class="text-accent-content hover:bg-accent active:bg-accent-focus rounded-full">
-    <%= link_to "#" do %>
+    <% end %>
+  <% else %>
+    <%= link_to root_path, class: 'hover:bg-accent active:bg-accent-focus rounded-full' do %>
+    <button class="text-accent-content">
+      <i class="fa-solid fa-house-chimney"></i>
+    </button>
+    <span class="btm-nav-label"><%= t('defaults.home') %></span>
+    <% end %>
+  <% end %>
+  <%= link_to new_post_path, class: 'hover:bg-accent active:bg-accent-focus rounded-full' do %>
+    <button class="text-accent-content">
       <i class="fa-solid fa-camera"></i>
-    <% end %>
+    </button>
     <span class="btm-nav-label"><%= t('defaults.post') %></span>
-  </button>
-  <button class="text-accent-content hover:bg-accent active:bg-accent-focus rounded-full">
-    <%= link_to "#" do %>
+  <% end %>
+  <%= link_to "#", class: 'hover:bg-accent active:bg-accent-focus rounded-full' do %>
+    <button class="text-accent-content">
       <i class="fa-solid fa-calendar-days"></i>
-    <% end %>
-    <span class="btm-nav-label"><%= t('defaults.mypage') %></span>
-  </button>
+    </button>
+    <span class="btm-nav-label"><%= t('defaults.home') %></span>
+  <% end %>
 </div>
