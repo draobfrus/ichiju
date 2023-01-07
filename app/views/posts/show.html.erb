@@ -8,10 +8,14 @@
           <p>by <%=link_to @post.user.username, "#" %></p>
           <p><%= simple_format(@post.content) %></p>
           <p class="flex justify-end mb-4"><%= I18n.l(@post.created_at, format: :long) %></p>
-          <div class="flex gap-8 justify-end">
-            <%= link_to "#" do %><i class="fa-solid fa-heart fa-2x"></i><% end %>
-            <%= link_to "#" do %><i class="fa-solid fa-bookmark fa-2x"></i><% end %>
-          </div>
+
+          <%#
+          <div class="flex gap-8 justify-between">
+            <%# <%= render 'like_button' %>
+            <%# <%= render 'bookmark_button' %>
+          <%# </div>
+          %>
+
         </div>
       </div>
       <% if current_user.own?(@post) %>
