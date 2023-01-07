@@ -28,16 +28,16 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to post_url(@post), success: t('defaults.message.updated')
+      redirect_to post_url(@post), success: t('defaults.message.success', word: t('defaults.update'))
     else
-      flash.now[:danger] = t('defaults.message.not_updated')
+      flash.now[:danger] = t('defaults.message.danger', word: t('defaults.update'))
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to posts_url, success: t('defaults.message.deleted'), status: :see_other
+    redirect_to posts_url, success: t('defaults.message.success', word: t('defaults.delete')), status: :see_other
   end
 
   private
