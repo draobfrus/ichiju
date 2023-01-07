@@ -21,6 +21,8 @@
     <% end %>
     <%= render 'shared/flash_message' %>
     <%= yield %>
-    <%= render 'shared/bottom_navbar' %>
+    <% if logged_in? %>
+      <%= render 'shared/bottom_navbar' %>
+    <% end %>
   </body>
 </html>
