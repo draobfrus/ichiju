@@ -21,7 +21,7 @@
               <%= t('.edit') %>
             </button>
           <% end %>
-          <%= link_to "#" do %>
+          <%= link_to post_path(@post), data: { turbo_method: :delete, turbo_confirm: t('.delete?') } do %>
             <button class="btn gap-2 btn-outline btn-warning lg:btn-lg">
               <i class="fa-solid fa-trash md:fa-2x"></i>
               <%= t('.delete') %>

@@ -36,6 +36,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post.destroy
+    redirect_to posts_url, success: t('messages.deleted'), status: :see_other
   end
 
   private
