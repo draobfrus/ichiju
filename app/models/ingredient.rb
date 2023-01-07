@@ -9,4 +9,11 @@
 #  updated_at     :datetime         not null
 #
 class Ingredient < ApplicationRecord
+  has_many :post_ingredients
+  has_many :posts, through: :post_ingredients
+
+  validates :name, presence: true, length: { maximum: 255 }
+  validates :classification, presence: true
+
+  enum classification: { vegetable: 10, meat: 20, fish: 30 }
 end
