@@ -13,9 +13,9 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
 
     if @post.save
-      redirect_to posts_url, success: t('messages.success', word: Post.model_name.human)
+      redirect_to posts_url, success: t('defaults.message.success', word: Post.model_name.human)
     else
-      flash.now[:danger] = t('messages.danger', word: Post.model_name.human)
+      flash.now[:danger] = t('defaults.message.danger', word: Post.model_name.human)
       render :new, status: :unprocessable_entity
     end
   end
@@ -28,16 +28,16 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to post_url(@post), success: t('messages.updated')
+      redirect_to post_url(@post), success: t('defaults.message.updated')
     else
-      flash.now[:danger] = t('messages.not_updated')
+      flash.now[:danger] = t('defaults.message.not_updated')
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to posts_url, success: t('messages.deleted'), status: :see_other
+    redirect_to posts_url, success: t('defaults.message.deleted'), status: :see_other
   end
 
   private
