@@ -5,6 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "csv"
+
+CSV.foreach('db/csv/ingredients.csv', headers: true) do |row|
+  Ingredient.create!(
+    name: row['name'],
+    classification: row['classification'].to_i
+  )
+end
+
 10.times do |n|
   User.create!(
     username: "テストユーザー#{n+1}",
