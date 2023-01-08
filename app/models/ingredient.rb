@@ -15,5 +15,5 @@ class Ingredient < ApplicationRecord
   validates :name, presence: true, length: { maximum: 255 }
   validates :classification, presence: true
 
-  enum classification: { vegetable: 10, meat: 20, fish: 30 }
+  enum classification: { vegetable: 10, meat: 20, fish: 30, seasoning: 40, other: 50 }
 end
