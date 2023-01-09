@@ -14,6 +14,10 @@
       <%= f.file_field :image, class: 'file-input file-input-accent w-full' %>
       <%= f.hidden_field :image_cache %>
     </div>
+    <div class="form-control mb-2">
+      <%= f.label :ingredient_id, class: 'label text-accent-content font-bold' %>
+      <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name, { include_blank: true }, { class: 'input input-accent h-20', multiple: true } %>
+    </div>
     <%= f.submit t('defaults.post'), class: 'btn btn-block btn-primary mt-10 mb-10'%>
   </div>
 <% end %>
