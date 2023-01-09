@@ -5,7 +5,7 @@
         <%= t('.title') %>
       </h2>
       <div class="max-w-xl border rounded-xl mx-auto mb-20">
-        <%= render 'form' %>
+        <%= render partial: 'form', locals: { post: @post } %>
       </div>
     </div>
   </div>
