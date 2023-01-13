@@ -1,5 +1,4 @@
-// エラー回避のためコメントアウト
-// import { Application } from "@hotwired/stimulus"
+import { Application } from "@hotwired/stimulus"
 
 const application = Application.start()
 
