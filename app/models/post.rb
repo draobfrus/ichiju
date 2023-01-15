@@ -20,7 +20,7 @@
 #
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :post_ingredients
+  has_many :post_ingredients, dependent: :destroy
   has_many :ingredients, through: :post_ingredients
 
   mount_uploader :image, ImageUploader
