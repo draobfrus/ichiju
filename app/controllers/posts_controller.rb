@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
 
-    if @post.save
+    if @post.save_with(ingredient_ids)
       redirect_to posts_url, success: t('defaults.message.success', word: Post.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.danger', word: Post.model_name.human)
@@ -27,7 +27,8 @@ class PostsController < ApplicationController
   def edit; end
 
   def update
-    if @post.update(post_params)
+    @post.assign_attributes(post_params)
+    if @post.save_with(ingredient_ids)
       redirect_to post_url(@post), success: t('defaults.message.success', word: t('defaults.update'))
     else
       flash.now[:danger] = t('defaults.message.danger', word: t('defaults.update'))
@@ -48,5 +49,9 @@ class PostsController < ApplicationController
 
   def set_post
     @post = current_user.posts.find(params[:id])
+  end
+
+  def ingredient_ids
+    params[:post][:ingredient_ids].compact_blank
   end
 end
