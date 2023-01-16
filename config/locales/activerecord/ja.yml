@@ -17,6 +17,7 @@ ja:
         title: "タイトル"
         content: "本文"
         image: "写真"
+        ingredient_ids: "使用した食材"
   attributes:
     id: "ID"
     created_at: "作成日時"

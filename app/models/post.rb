@@ -20,7 +20,7 @@
 #
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :post_ingredients
+  has_many :post_ingredients, dependent: :destroy
   has_many :ingredients, through: :post_ingredients
 
   mount_uploader :image, ImageUploader
@@ -28,4 +28,15 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { maximum: 255 }
   validates :image, presence: true
   validates :content, length: { maximum: 65535 }
+
+  def save_with(ingredient_ids)
+    ActiveRecord::Base.transaction do
+      self.ingredients = ingredient_ids.map { |id| Ingredient.find(id) }
+      save!
+    end
+    true
+
+    rescue StandardError
+    false
+  end
 end

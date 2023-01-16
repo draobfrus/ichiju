@@ -10,8 +10,9 @@
 #
 # Indexes
 #
-#  index_post_ingredients_on_ingredient_id  (ingredient_id)
-#  index_post_ingredients_on_post_id        (post_id)
+#  index_post_ingredients_on_ingredient_id              (ingredient_id)
+#  index_post_ingredients_on_post_id                    (post_id)
+#  index_post_ingredients_on_post_id_and_ingredient_id  (post_id,ingredient_id) UNIQUE
 #
 # Foreign Keys
 #
@@ -21,4 +22,6 @@
 class PostIngredient < ApplicationRecord
   belongs_to :post
   belongs_to :ingredient
+
+  validates :post_id, uniqueness: { scope: :ingredient_id }
 end
