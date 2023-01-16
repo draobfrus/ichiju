@@ -6,8 +6,8 @@
         <div class="card-body text-accent-content">
           <h3 class="card-title text-2xl lg:text-3xl font-bold"><%= @post.title %></h2>
           <p>by <%=link_to @post.user.username, "#" %></p>
-          <%= render partial: 'ingredient', locals: { post: @post } %>
           <p><%= simple_format(@post.content) %></p>
+          <%= render partial: 'ingredient', locals: { post: @post } %>
           <p class="flex justify-end mb-4"><%= I18n.l(@post.created_at, format: :long) %></p>
 
           <%#
