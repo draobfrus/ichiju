@@ -12,4 +12,6 @@
 #  updated_at      :datetime         not null
 #
 class MisosoupBase < ApplicationRecord
+  has_many :user_misosoup_bases, dependent: :destroy
+  has_many :users, through: :user_misosoup_bases
 end

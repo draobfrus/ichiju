@@ -22,6 +22,8 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
 
   has_many :posts, dependent: :destroy
+  has_many :user_misosoup_bases, dependent: :destroy
+  has_many :misosoup_bases, through: :user_misosoup_bases
 
   validates :username, presence: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true

@@ -22,4 +22,6 @@
 class UserMisosoupBase < ApplicationRecord
   belongs_to :user
   belongs_to :misosoup_base
+
+  validates :user_id, uniqueness: { scope: :misosoup_base_id }
 end
