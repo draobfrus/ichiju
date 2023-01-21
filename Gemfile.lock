@@ -114,6 +114,7 @@ GEM
       reline (>= 0.3.1)
     debug_inspector (1.1.0)
     diff-lcs (1.5.0)
+    dotenv (2.8.1)
     enum_help (0.0.19)
       activesupport (>= 3.0.0)
     erubi (1.12.0)
@@ -230,6 +231,8 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    rakuten_web_service (1.13.1)
+      json (~> 2.3)
     regexp_parser (2.6.1)
     reline (0.3.2)
       io-console (~> 0.5)
@@ -335,6 +338,7 @@ DEPENDENCIES
   carrierwave
   cssbundling-rails
   debug
+  dotenv
   enum_help
   factory_bot_rails
   faker
@@ -345,6 +349,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   rails-i18n
+  rakuten_web_service
   rspec-rails
   rubocop
   rubocop-rails
