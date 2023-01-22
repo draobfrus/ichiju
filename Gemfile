@@ -70,9 +70,6 @@ gem "jp_prefecture"
 # Image uploader
 gem "carrierwave"
 
-# Managing environment variables
-gem "dotenv"
-
 # Rakuten API
 gem "rakuten_web_service"
 
