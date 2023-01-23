@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_17_141610) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_23_123948) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_141610) do
     t.string "item_image_urls"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "item_code"
+    t.index ["item_code"], name: "index_misosoup_bases_on_item_code", unique: true
   end
 
   create_table "post_ingredients", force: :cascade do |t|
