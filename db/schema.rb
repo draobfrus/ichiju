@@ -81,6 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_23_123948) do
   add_foreign_key "post_ingredients", "ingredients"
   add_foreign_key "post_ingredients", "posts"
   add_foreign_key "posts", "users"
-  add_foreign_key "user_misosoup_bases", "misosoup_bases", column: "misosoup_base_id"
+  add_foreign_key "user_misosoup_bases", "misosoup_bases"
   add_foreign_key "user_misosoup_bases", "users"
 end
