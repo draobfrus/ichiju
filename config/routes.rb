@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resource :mypage, only: :show
 
-  resources :misosoup_bases, only: %i[new create destroy], as: 'misodashis'
+  resources :misosoup_bases, only: %i[new create destroy]
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

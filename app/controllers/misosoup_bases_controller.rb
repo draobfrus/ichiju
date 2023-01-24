@@ -6,4 +6,18 @@ class MisosoupBasesController < ApplicationController
     end
   end
 
+  def create
+    @misosoup_base = MisosoupBase.new(item_code: params[:code],
+                                      item_name: params[:name],
+                                      item_url: params[:url],
+                                      item_image_urls: params[:image])
+    unless current_user.registered?(@misosoup_base)
+      @misosoup_base.save!
+      current_user.register(@misosoup_base)
+      redirect_to mypage_url
+    else
+      flash.now[:danger] = 'すでに登録しています'
+      render :new, status: :unprocessable_entity
+    end
+  end
 end
