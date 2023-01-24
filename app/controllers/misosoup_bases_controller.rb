@@ -20,4 +20,10 @@ class MisosoupBasesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @misosoup_base = current_user.misosoup_bases.find(params[:id])
+    @misosoup_base.destroy!
+    redirect_to mypage_url, success: t('defaults.message.success', word: t('defaults.delete')), status: :see_other
+  end
 end

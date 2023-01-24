@@ -6,6 +6,7 @@
 
 <% if @misosoup_bases.present? %>
   <% @misosoup_bases.each do |misosoup_base| %>
-    <p><%= misosoup_base.item_name %></p></br>
+    <p><%= misosoup_base.item_name %></p>
+    <%= link_to '↑を削除する', misosoup_base_path(misosoup_base), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete?') } %>
   <% end %>
 <% end %>
