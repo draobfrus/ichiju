@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  resource :mypage, only: :show
+
+  resources :misosoup_bases, only: %i[new create destroy]
+
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'

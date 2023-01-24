@@ -1,0 +1,22 @@
+<h1>商品検索</h1>
+<%= form_with url: new_misosoup_base_path, method: :get, local: true do |f| %>
+  <%= f.search_field :keyword, class: 'input input-primary' %>
+  <%= f.submit '商品を検索する', class: 'btn btn-primary' %>
+<% end %>
+
+<h1>検索結果表示</h1>
+<% if @results.present? %>
+  <% @results.first(5).each do |result| %>
+    <%= result['itemCode'] %></br>
+    <%= link_to result['itemName'], result['itemUrl'] %></br>
+    価格：<%= result['itemPrice'] %>円
+    <%= image_tag(result['mediumImageUrls'][0]) %>
+    <%= link_to '登録する',
+        misosoup_bases_path(code: result['itemCode'],
+                            name: result['itemName'],
+                            url: result['itemUrl'],
+                            price: result['itemPrice'],
+                            image: result['mediumImageUrls'][0]),
+        data: { 'turbo_method': :post } %>
+  <% end %>
+<% end %>

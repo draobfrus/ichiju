@@ -1,0 +1,12 @@
+<h1>マイページ<h1>
+<p><%= current_user.username %></p>
+
+
+<%= link_to 'おみそ・おだし登録', new_misosoup_base_path, class: "btn btn-primary" %>
+
+<% if @misosoup_bases.present? %>
+  <% @misosoup_bases.each do |misosoup_base| %>
+    <p><%= misosoup_base.item_name %></p>
+    <%= link_to '↑を削除する', misosoup_base_path(misosoup_base), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete?') } %>
+  <% end %>
+<% end %>

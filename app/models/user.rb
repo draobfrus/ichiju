@@ -40,4 +40,13 @@ class User < ApplicationRecord
   def own?(object)
     id == object.user_id
   end
+
+  def register(misosoup_base)
+    misosoup_base.save!
+    user_misosoup_bases.create!(misosoup_base_id: misosoup_base.id)
+  end
+
+  def registered?(misosoup_base)
+    misosoup_bases.exists?(item_code: misosoup_base.item_code)
+  end
 end
