@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   end
 
   def the_day
-    @posts = Post.created_on(params[:date]).order(created_at: :desc)
+    @posts = Post.created_on(params[:date].to_date).order(created_at: :desc)
   end
 
   private
