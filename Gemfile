@@ -50,6 +50,7 @@ gem "bootsnap", require: false
 
 # UI/UX
 gem "rails-i18n"
+gem "simple_calendar", "~> 2.4"
 
 # Model
 gem "enum_help"

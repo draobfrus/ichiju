@@ -39,4 +39,8 @@ class Post < ApplicationRecord
     rescue StandardError
     false
   end
+
+  def start_time
+    self.created_at
+  end
 end
