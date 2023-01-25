@@ -29,6 +29,8 @@ class Post < ApplicationRecord
   validates :image, presence: true
   validates :content, length: { maximum: 65535 }
 
+  scope :created_on, -> (date) { where(created_at: date.to_date.all_day) }
+
   def save_with(ingredient_ids)
     ActiveRecord::Base.transaction do
       self.ingredients = ingredient_ids.map { |id| Ingredient.find(id) }

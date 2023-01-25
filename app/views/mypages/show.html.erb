@@ -13,6 +13,6 @@
 <%= month_calendar partial: 'simple_calendar/calendar', events: @posts do |date, posts| %>
   <%= date %>
   <% if posts.present? %>
-    <%= link_to image_tag('misosoup.png'), '#' %>
+    <%= link_to image_tag('misosoup.png'), the_day_posts_path(date: posts[0].created_at) %>
   <% end %>
 <% end %>
