@@ -10,13 +10,13 @@
 #
 # Indexes
 #
-#  index_ingredients_on_name  (name) UNIQUE
+#  index_ingredients_on_name  (name)
 #
 class Ingredient < ApplicationRecord
   has_many :post_ingredients, dependent: :destroy
   has_many :posts, through: :post_ingredients
 
-  validates :name, presence: true, uniqueness: true, length: { maximum: 255 }
+  validates :name, presence: true, length: { maximum: 255 }
   validates :classification, presence: true
 
   enum classification: { vegetable: 10, meat: 20, fish: 30, seasoning: 40, other: 50 }
