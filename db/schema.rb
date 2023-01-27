@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_23_123948) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_27_134855) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_23_123948) do
     t.index ["ingredient_id"], name: "index_post_ingredients_on_ingredient_id"
     t.index ["post_id", "ingredient_id"], name: "index_post_ingredients_on_post_id_and_ingredient_id", unique: true
     t.index ["post_id"], name: "index_post_ingredients_on_post_id"
+  end
+
+  create_table "post_misosoup_bases", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "misosoup_base_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["misosoup_base_id"], name: "index_post_misosoup_bases_on_misosoup_base_id"
+    t.index ["post_id", "misosoup_base_id"], name: "index_post_misosoup_bases_on_post_id_and_misosoup_base_id", unique: true
+    t.index ["post_id"], name: "index_post_misosoup_bases_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -80,6 +90,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_23_123948) do
 
   add_foreign_key "post_ingredients", "ingredients"
   add_foreign_key "post_ingredients", "posts"
+  add_foreign_key "post_misosoup_bases", "misosoup_bases"
+  add_foreign_key "post_misosoup_bases", "posts"
   add_foreign_key "posts", "users"
   add_foreign_key "user_misosoup_bases", "misosoup_bases"
   add_foreign_key "user_misosoup_bases", "users"

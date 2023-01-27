@@ -22,6 +22,8 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :post_ingredients, dependent: :destroy
   has_many :ingredients, through: :post_ingredients
+  has_many :post_misosoup_bases, dependent: :destroy
+  has_many :misosoup_bases, through: :post_misosoup_bases
 
   mount_uploader :image, ImageUploader
 

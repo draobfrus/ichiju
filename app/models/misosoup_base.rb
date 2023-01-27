@@ -19,4 +19,7 @@
 class MisosoupBase < ApplicationRecord
   has_many :user_misosoup_bases, dependent: :destroy
   has_many :users, through: :user_misosoup_bases
+
+  has_many :post_misosoup_bases, dependent: :destroy
+  has_many :posts, through: :post_misosoup_bases
 end
