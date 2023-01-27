@@ -10,9 +10,9 @@
   <% end %>
 <% end %>
 
-<%= month_calendar partial: 'simple_calendar/calendar', events: @posts do |date, posts| %>
-  <%= date %>
+<%= month_calendar events: @posts do |date, posts| %>
+  <%= I18n.l(date, format: :short) %>
   <% if posts.present? %>
-    <%= link_to image_tag(posts[0].image.url), the_day_posts_path(date: posts[0].created_at) %>
+    <%= link_to image_tag(posts[0].image.url, size: 10*10), the_day_posts_path(date: posts[0].created_at) %>
   <% end %>
 <% end %>
