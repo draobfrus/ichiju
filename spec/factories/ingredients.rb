@@ -10,7 +10,7 @@
 #
 # Indexes
 #
-#  index_ingredients_on_name  (name)
+#  index_ingredients_on_name  (name) UNIQUE
 #
 FactoryBot.define do
   factory :ingredient do
