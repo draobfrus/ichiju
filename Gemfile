@@ -74,6 +74,10 @@ gem "carrierwave"
 # Rakuten API
 gem "rakuten_web_service"
 
+# Data registration
+gem "seed-fu", "~> 2.3"
+gem "faker"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -103,6 +107,5 @@ end
 
 group :test do
   gem "capybara"
-  gem "faker"
   gem "webdrivers"
 end
