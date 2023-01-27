@@ -41,6 +41,10 @@ class PostsController < ApplicationController
     redirect_to posts_url, success: t('defaults.message.success', word: t('defaults.delete')), status: :see_other
   end
 
+  def the_day
+    @posts = Post.created_on(params[:date].to_date).order(created_at: :desc)
+  end
+
   private
 
   def post_params

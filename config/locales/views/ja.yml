@@ -30,3 +30,6 @@ ja:
       title: "投稿詳細"
     edit:
       title: "投稿編集"
+  simple_calendar:
+    previous: "<<"
+    next: ">>"
