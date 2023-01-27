@@ -10,7 +10,7 @@
 #
 # Indexes
 #
-#  index_ingredients_on_name  (name) UNIQUE
+#  index_ingredients_on_name  (name)
 #
 require 'rails_helper'
 
