@@ -33,9 +33,10 @@ class Post < ApplicationRecord
 
   scope :created_on, -> (date) { where(created_at: date.all_day) }
 
-  def save_with(ingredient_ids)
+  def save_with(ingredient_ids, misosoup_base_ids)
     ActiveRecord::Base.transaction do
       self.ingredients = ingredient_ids.map { |id| Ingredient.find(id) }
+      self.misosoup_bases = misosoup_base_ids.map { |id| MisosoupBase.find(id) }
       save!
     end
     true

@@ -20,8 +20,8 @@
 #  fk_rails_...  (post_id => posts.id)
 #
 class PostMisosoupBase < ApplicationRecord
-  belongs_to :post_id
-  belongs_to :misosoup_base_id
+  belongs_to :post
+  belongs_to :misosoup_base
 
   validates :post_id, uniqueness: { scope: :misosoup_base_id }
 end
