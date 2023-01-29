@@ -12,11 +12,11 @@
     価格：<%= result['itemPrice'] %>円
     <%= image_tag(result['mediumImageUrls'][0]) %>
     <%= link_to '登録する',
-        misosoup_bases_path(code: result['itemCode'],
-                            name: result['itemName'],
-                            url: result['itemUrl'],
-                            price: result['itemPrice'],
-                            image: result['mediumImageUrls'][0]),
-        data: { 'turbo_method': :post } %>
+      misosoup_bases_path(code: result['itemCode'],
+                          name: result['itemName'],
+                          url: result['itemUrl'],
+                          price: result['itemPrice'],
+                          image: result['mediumImageUrls'][0]),
+      data: { 'turbo_method': :post } %>
   <% end %>
 <% end %>

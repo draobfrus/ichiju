@@ -1,0 +1,7 @@
+<div class="inline-flex items-center py-4">
+  <% post.misosoup_bases.each do |misosoup_base| %>
+    <%= link_to misosoup_base.item_name, misosoup_base.item_url %>
+    <%= misosoup_base.item_price %>円
+    <%= image_tag(misosoup_base.item_image_urls) %>
+  <% end %>
+</div>

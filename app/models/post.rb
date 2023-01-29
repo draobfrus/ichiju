@@ -22,6 +22,8 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :post_ingredients, dependent: :destroy
   has_many :ingredients, through: :post_ingredients
+  has_many :post_misosoup_bases, dependent: :destroy
+  has_many :misosoup_bases, through: :post_misosoup_bases
 
   mount_uploader :image, ImageUploader
 
@@ -31,9 +33,10 @@ class Post < ApplicationRecord
 
   scope :created_on, -> (date) { where(created_at: date.all_day) }
 
-  def save_with(ingredient_ids)
+  def save_with(ingredient_ids, misosoup_base_ids)
     ActiveRecord::Base.transaction do
       self.ingredients = ingredient_ids.map { |id| Ingredient.find(id) }
+      self.misosoup_bases ||= misosoup_base_ids.map { |id| MisosoupBase.find(id) }
       save!
     end
     true
