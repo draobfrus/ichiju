@@ -48,4 +48,4 @@ yarn-error.log
 /public/uploads
 
 # Ignore dotenv file
-.env
+.env.*
