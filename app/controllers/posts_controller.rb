@@ -60,6 +60,8 @@ class PostsController < ApplicationController
   end
 
   def misosoup_base_ids
-    params[:post][:misosoup_base_ids].compact_blank
+    if current_user.misosoup_bases.present?
+      params[:post][:misosoup_base_ids].compact_blank
+    end
   end
 end
