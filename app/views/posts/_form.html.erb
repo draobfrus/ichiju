@@ -37,9 +37,8 @@
 <% end %>
 
 <script>
-function imagePreview() {
-    const target = this.event.target;
-    const file = target.files[0];
+function imagePreview(event) {
+    const file = event.target.files[0];
     const reader = new FileReader();
     const preview = document.getElementById("preview");
     const previewImage = document.getElementById("previewImage");
