@@ -37,7 +37,7 @@ class Post < ApplicationRecord
     ActiveRecord::Base.transaction do
       self.ingredients = ingredient_ids.map { |id| Ingredient.find(id) }
       save!
-      self.misosoup_bases = misosoup_base_ids.map { |id| MisosoupBase.find(id) }
+      self.misosoup_bases ||= misosoup_base_ids.map { |id| MisosoupBase.find(id) }
       save!
     end
     true
