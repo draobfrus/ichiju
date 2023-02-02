@@ -70,6 +70,7 @@ gem "jp_prefecture"
 
 # Image uploader
 gem "carrierwave"
+gem "fog-aws"
 
 # Rakuten API
 gem "rakuten_web_service"
