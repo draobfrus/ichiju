@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
 
   resources :posts do
-    get 'the_day', on: :collection
+    collection do
+      get :the_day
+      get :search
+    end
   end
 
   resource :mypage, only: :show
