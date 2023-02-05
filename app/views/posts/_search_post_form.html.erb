@@ -1,0 +1,6 @@
+<div class="mb-10 md:mb-16">
+  <%= form_with model: search_form, url: search_posts_path, scope: :q, method: :get, local: true, class: "flex items-center justify-center" do |f| %>
+    <%= f.search_field :title_or_content, class: 'input input-primary' %>
+    <%= f.submit '投稿を検索する', class: 'btn btn-primary' %>
+  <% end %>
+</div>
