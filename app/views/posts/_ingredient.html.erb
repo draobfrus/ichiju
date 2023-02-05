@@ -2,15 +2,25 @@
   <% post.ingredients.each do |ingredient| %>
     <% case ingredient.classification %>
     <% when 'vegetable' %>
-      <span class='badge bg-green-500 text-stone-50 mr-2'><%= ingredient.name %></span>
+      <span class='badge bg-green-500 text-stone-50 mr-2'>
+        <%= link_to ingredient.name, posts_path(ingredient_name: ingredient.name) %>
+      </span>
     <% when 'meat' %>
-      <span class='badge bg-pink-500 text-stone-50 mr-2'><%= ingredient.name %></span>
+      <span class='badge bg-pink-500 text-stone-50 mr-2'>
+        <%= link_to ingredient.name, posts_path(ingredient_name: ingredient.name) %>
+      </span>
     <% when 'fish' %>
-      <span class='badge bg-blue-500 text-stone-50 mr-2'><%= ingredient.name %></span>
+      <span class='badge bg-blue-500 text-stone-50 mr-2'>
+        <%= link_to ingredient.name, posts_path(ingredient_name: ingredient.name) %>
+      </span>
     <% when 'seasoning' %>
-      <span class='badge bg-yellow-500 text-stone-50 mr-2'><%= ingredient.name %></span>
+      <span class='badge bg-yellow-500 text-stone-50 mr-2'>
+        <%= link_to ingredient.name, posts_path(ingredient_name: ingredient.name) %>
+      </span>
     <% when 'other' %>
-      <span class='badge bg-gray-700 text-stone-50 mr-2'><%= ingredient.name %></span>
+      <span class='badge bg-gray-700 text-stone-50 mr-2'>
+        <%= link_to ingredient.name, posts_path(ingredient_name: ingredient.name) %>
+      </span>
     <% end %>
   <% end %>
 </div>
