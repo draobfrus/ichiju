@@ -1,0 +1,11 @@
+<%# Link to the "Last" page
+  - available local variables
+    url:           url to the last page
+    current_page:  a page object for the currently displayed page
+    total_pages:   total number of pages
+    per_page:      number of items to fetch per page
+    remote:        data-remote
+-%>
+<span class="last border border-stone-600 bg-stone-50 hover:bg-accent active:bg-accent-focus rounded-lg px-4 py-2 font-medium text-stone-600 focus:z-2">
+  <%= link_to_unless current_page.last?, t('views.pagination.last').html_safe, url, remote: remote %>
+</span>

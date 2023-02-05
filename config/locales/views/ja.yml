@@ -23,6 +23,13 @@ ja:
       deleted: "削除しました"
       delete?: "削除しますか？"
       are_you_sure: "%{word}してよろしいですか？"
+  views:
+    pagination:
+      first: "最初"
+      last: "最後"
+      previous: "<<"
+      next: ">>"
+      truncate: "……"
   posts:
     new:
       title: "投稿作成"
