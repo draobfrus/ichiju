@@ -31,6 +31,8 @@ class Post < ApplicationRecord
   validates :image, presence: true
   validates :content, length: { maximum: 65535 }
 
+  scope :title_contain, ->(word) { where('posts.title LIKE ?', "#{word}") }
+  scope :content_contain, ->(word) { where('posts.content LIKE ?', "#{word}") }
   scope :created_on, -> (date) { where(created_at: date.all_day) }
 
   def save_with(ingredient_ids, misosoup_base_ids)
