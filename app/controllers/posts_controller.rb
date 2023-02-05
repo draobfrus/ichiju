@@ -45,6 +45,11 @@ class PostsController < ApplicationController
     @posts = Post.created_on(params[:date].to_date).order(created_at: :desc)
   end
 
+  def search
+    @search_form = SearchPostsForm.new(search_post_params)
+    @posts = @search_form.search.includes(:user).page(params[:page])
+  end
+
   private
 
   def post_params
@@ -53,6 +58,10 @@ class PostsController < ApplicationController
 
   def set_post
     @post = current_user.posts.find(params[:id])
+  end
+
+  def search_post_params
+    params.fetch(:q, {}).permit(:title_or_content)
   end
 
   def ingredient_ids
