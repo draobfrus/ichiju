@@ -10,9 +10,11 @@
   <% end %>
 <% end %>
 
-<%= month_calendar events: @posts do |date, posts| %>
-  <%= I18n.l(date, format: :short) %>
-  <% if posts.present? %>
-    <%= link_to image_tag(posts[0].image.url, size: 10*10), the_day_posts_path(date: posts[0].created_at) %>
-  <% end %>
+<%= month_calendar partial: 'simple_calendar/month_calendar', events: @posts do |date, posts| %>
+  <%= date.to_s.slice(8, 2) %>
+  <div class="m-auto lg:w-36 md:w-28 w-14 lg:h-36 md:h-28 h-14">
+    <% if posts.present? %>
+      <%= link_to image_tag(posts[0].image.url), the_day_posts_path(date: posts[0].created_at)%>
+    <% end %>
+  </div>
 <% end %>
