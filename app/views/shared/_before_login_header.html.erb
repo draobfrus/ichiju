@@ -1,7 +1,9 @@
 <header>
-  <div class="navbar bg-accent">
-    <div class="navbar-start">
-      <%= link_to t('defaults.ichiju'), root_path, class: "btn btn-ghost normal-case text-xl rounded-full" %>
+  <div class="navbar bg-neutral-content">
+    <div class="navbar-start h-10 md:h-16">
+      <div class="flex justify-between items-start flex-wrap">
+        <%= link_to (image_tag 'header_logo.png'), root_path, class: 'h-15 w-24' %>
+      </div>
     </div>
     <div class="navbar-end">
       <%= link_to t('defaults.login'), login_path, class: "btn btn-ghost normal-case rounded-full" %>

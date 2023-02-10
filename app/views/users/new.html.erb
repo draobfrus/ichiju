@@ -6,7 +6,7 @@
       <div class="max-w-xl border rounded-xl mx-auto">
         <%= form_with model: @user, local: true do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
-          <div class="flex flex-col bg-stone-50 gap-4 p-4 md:p-8">
+          <div class="flex flex-col gap-4 p-4 md:p-8">
             <div class="form-control mb-2">
               <%= f.label :username, class: 'label  font-bold' %>
               <%= f.text_field :username, class: 'input input-accent w-full' %>
