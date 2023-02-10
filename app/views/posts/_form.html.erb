@@ -2,30 +2,30 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="flex flex-col bg-stone-50 gap-4 p-4 md:p-8">
     <div class="form-control mb-2">
-      <%= f.label :title, class: 'label text-accent-content font-bold' %>
+      <%= f.label :title, class: 'label font-bold' %>
       <%= f.text_field :title, class: 'input input-accent w-full' %>
     </div>
     <div class="form-control mb-2">
-      <%= f.label :content, class: 'label text-accent-content font-bold' %>
+      <%= f.label :content, class: 'label font-bold' %>
       <%= f.text_area :content, class: 'textarea textarea-accent w-full' %>
     </div>
     <div class="form-control mb-2">
-      <%= f.label :image, class: 'label text-accent-content font-bold' %>
+      <%= f.label :image, class: 'label font-bold' %>
       <%= f.file_field :image, onchange: 'imagePreview(event)', accept: 'image/*', class: 'file-input file-input-accent w-full' %>
       <%= f.hidden_field :image_cache %>
     </div>
     <div class="form-control mb-2">
-      <h1 class="label text-accent-content font-bold mb-10">
+      <h1 class="label font-bold mb-10">
         画像プレビュー（中央で切り取られます）
       </h1>
       <div id="preview"></div>
     </div>
     <div class="form-control mb-2">
-      <%= f.label :ingredient_ids, class: 'label text-accent-content font-bold' %>
+      <%= f.label :ingredient_ids, class: 'label font-bold' %>
       <%= f.collection_select :ingredient_ids, Ingredient.all, :id, :name, { prompt: '選択してください' }, { data: { controller: "select" }, controller: "select", id: 'select', class: 'input input-accent p-3 h-20', multiple: true, autocomplete: 'off' } %>
     </div>
     <div class="form-control mb-2">
-      <%= f.label :misosoup_base_ids, class: 'label text-accent-content font-bold' %>
+      <%= f.label :misosoup_base_ids, class: 'label font-bold' %>
       <% if current_user.misosoup_bases.present? %>
         <%= f.collection_check_boxes :misosoup_base_ids, current_user.misosoup_bases, :id, :item_name %>
       <% else %>

@@ -4,7 +4,7 @@
   </div>
   <div>
     <%= link_to post.title, post_path(post), class: 'text-primary hover:text-primary-focus md:text-lg font-bold' %>
-    <p class="text-accent-content text-sm md:text-base mb-3 md:mb-4">
+    <p class="text-sm md:text-base mb-3 md:mb-4">
       by <%=link_to post.user.username, "#", class: 'hover:text-accent-focus'%>
     </p>
   </div>
