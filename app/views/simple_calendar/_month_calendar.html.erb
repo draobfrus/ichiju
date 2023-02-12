@@ -26,17 +26,17 @@
               <% end %>
             </tr>
           </thead>
-          <tbody valign="top">
+          <tbody>
             <% date_range.each_slice(7) do |week| %>
               <tr class="lg:w-40 md:w-30 w-20 lg:h-40 md:h-30 h-20 xl:text-sm text-xs text-start">
                 <% week.each do |day| %>
-                    <%= content_tag :td, class: calendar.td_classes_for(day) do %>
-                      <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
-                        <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
-                      <% else %>
-                        <% passed_block.call day, sorted_events.fetch(day, []) %>
-                      <% end %>
+                  <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+                    <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
+                      <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
+                    <% else %>
+                      <% passed_block.call day, sorted_events.fetch(day, []) %>
                     <% end %>
+                  <% end %>
                 <% end %>
               </tr>
             <% end %>

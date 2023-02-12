@@ -15,7 +15,6 @@
 
   /* Simple Calendar */
   .day {
-    @apply p-2;
   }
   .wday-0 {
   }
