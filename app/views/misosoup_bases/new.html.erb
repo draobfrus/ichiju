@@ -5,7 +5,7 @@
     </div>
 
     <div class="mb-2 text-sm font-medium" >
-      <div class="relative mx-auto w-2/3 sm:w-3/4">
+      <div class="relative mx-auto w-11/12 md:w-2/3">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
@@ -21,8 +21,8 @@
     </div>
 
     <% if @results.present? %>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 mx-10 sm:mx-6">
-        <% @results.first(50).each do |result| %>
+      <div class="grid grid-cols-1 w-2/3 sm:w-full gap-4 mb-10 mx-10 sm:mx-6">
+        <% @results.first(100).each do |result| %>
           <div class="card bg-stone-200 p-4">
             <div class="flex items-start">
               <%= image_tag(result['mediumImageUrls'][0]) %>
@@ -46,10 +46,6 @@
         <% end %>
       </div>
       <%= paginate @results %>
-    <% else %>
-      <div class="m-10 md:m-16">
-        <h2 class="text-md lg:text-lg text-center mb-4 md:mb-6">商品が見つかりません</h2>
-      </div>
     <% end %>
   </div>
 </div>

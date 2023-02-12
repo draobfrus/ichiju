@@ -1,7 +1,13 @@
-<div class="inline-flex items-center py-4">
-  <% post.misosoup_bases.each do |misosoup_base| %>
-    <%= link_to misosoup_base.item_name, misosoup_base.item_url %>
-    <%= misosoup_base.item_price %>円
-    <%= image_tag(misosoup_base.item_image_urls) %>
-  <% end %>
-</div>
+<% post.misosoup_bases.each do |misosoup_base| %>
+  <div class="card bg-stone-200 p-4">
+    <div class="flex items-start justify-center">
+      <%= image_tag misosoup_base.item_image_urls, size: '128x128' %>
+      <div class="card-body">
+        <div class="card-title">
+          <%= link_to misosoup_base.item_name, misosoup_base.item_url, class:'no-underline hover:underline' %>
+        </div>
+        <p>価格：<%= misosoup_base.item_price %>円</p>
+      </div>
+    </div>
+  </div>
+<% end %>

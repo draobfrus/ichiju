@@ -6,9 +6,9 @@
         <h3 class="card-title text-2xl lg:text-3xl font-bold"><%= @post.title %></h2>
         <p>by <%=link_to @post.user.username, "#" %></p>
         <p><%= simple_format(@post.content) %></p>
+        <p class="flex justify-end mb-4"><%= I18n.l(@post.created_at, format: :short) %></p>
         <%= render partial: 'ingredient', locals: { post: @post } %>
         <%= render partial: 'misosoup_base', locals: { post: @post } %>
-        <p class="flex justify-end mb-4"><%= I18n.l(@post.created_at, format: :short) %></p>
 
         <%#
         <div class="flex gap-8 justify-between">
