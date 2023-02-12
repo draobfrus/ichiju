@@ -1,8 +1,9 @@
-<%= form_with model: post, local: true do |f| %>
+<%= form_with model: post, local: true, class: 'bg-white' do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="flex flex-col gap-4 p-4 md:p-8">
     <div class="form-control mb-2">
-      <%= f.label :title, class: 'label font-bold' %>
+      <%= f.label :title, '*タイトル', class: 'label font-bold' %>
+
       <%= f.text_field :title, class: 'input border-azuki w-full' %>
     </div>
     <div class="form-control mb-2">
@@ -10,29 +11,35 @@
       <%= f.text_area :content, class: 'textarea border-azuki w-full' %>
     </div>
     <div class="form-control mb-2">
-      <%= f.label :image, class: 'label font-bold' %>
+      <%= f.label :image, '*写真', class: 'label font-bold' %>
       <%= f.file_field :image, onchange: 'imagePreview(event)', accept: 'image/*', class: 'file-input border border-azuki w-full' %>
       <%= f.hidden_field :image_cache %>
     </div>
     <div class="form-control mb-2">
       <h1 class="label font-bold mb-10">
-        画像プレビュー（中央で切り取られます）
+        写真プレビュー（中央で切り取られます）
       </h1>
       <div id="preview"></div>
     </div>
     <div class="form-control mb-2">
       <%= f.label :ingredient_ids, class: 'label font-bold' %>
-      <%= f.collection_select :ingredient_ids, Ingredient.all, :id, :name, { prompt: '選択してください' }, { data: { controller: "select" }, controller: "select", id: 'select', class: 'input border-azuki p-3 h-20', multiple: true, autocomplete: 'off' } %>
+      <%= f.collection_select :ingredient_ids, Ingredient.all, :id, :name, { prompt: '必ず選択してください' }, { data: { controller: "select" }, controller: "select", id: 'select', class: 'input border-azuki p-3 h-20', multiple: true, autocomplete: 'off' } %>
     </div>
     <div class="form-control mb-2">
       <%= f.label :misosoup_base_ids, class: 'label font-bold' %>
       <% if current_user.misosoup_bases.present? %>
-        <%= f.collection_check_boxes :misosoup_base_ids, current_user.misosoup_bases, :id, :item_name %>
+        <div class="grid grid-cols-1 gap-2 items-start mx-2">
+          <%= f.collection_check_boxes :misosoup_base_ids, current_user.misosoup_bases, :id, :item_name %>
+        </div>
       <% else %>
-        <%= link_to "登録はこちら", new_misosoup_base_path %>
+        <p class="text-center">
+          おみそ・おだしが登録されていません。
+          （登録は<%= link_to "こちら", new_misosoup_base_path, class: 'btn btn-link text-lg' %>)
+        </p>
       <% end %>
     </div>
-    <%= f.submit t('defaults.post'), class: 'btn btn-block btn-secondary mt-10 mb-10'%>
+    <%= f.submit t('defaults.post'), class: 'btn btn-block btn-secondary mt-6 mb-10'%>
+    <p class="text-stone-500 text-end text-sm">*必須項目</p>
   </div>
 <% end %>
 
