@@ -9,29 +9,29 @@
           <div class="flex flex-col gap-4 p-4 md:p-8">
             <div class="form-control mb-2">
               <%= f.label :username, class: 'label  font-bold' %>
-              <%= f.text_field :username, class: 'input input-accent w-full' %>
+              <%= f.text_field :username, class: 'input border-azuki w-full' %>
             </div>
             <div class="form-control mb-2">
               <%= f.label :email, class: 'label  font-bold' %>
-              <%= f.email_field :email, class: 'input input-accent w-full' %>
+              <%= f.email_field :email, class: 'input border-azuki w-full' %>
             </div>
             <div class="form-control mb-2">
               <%= f.label :birthplace_code, class: 'label  font-bold' %>
-              <%= f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name, { include_blank: true }, class: 'select select-accent w-full' %>
+              <%= f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name, { include_blank: true }, class: 'select border-azuki w-full' %>
             </div>
             <div class="form-control mb-2">
               <%= f.label :living_place_code, class: 'label  font-bold' %>
-              <%= f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name, { include_blank: true }, class: 'select select-accent w-full' %>
+              <%= f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name, { include_blank: true }, class: 'select border-azuki w-full' %>
             </div>
             <div class="form-control mb-2">
               <%= f.label :password, class: 'label  font-bold' %>
-              <%= f.password_field :password, class: 'input input-accent w-full' %>
+              <%= f.password_field :password, class: 'input border-azuki w-full' %>
             </div>
             <div class="form-control mb-2">
               <%= f.label :password_confirmation, class: 'label  font-bold' %>
-              <%= f.password_field :password_confirmation, class: 'input input-accent w-full' %>
+              <%= f.password_field :password_confirmation, class: 'input border-azuki w-full' %>
             </div>
-            <%= f.submit (t "defaults.register"), class: 'btn btn-block btn-primary mt-10 mb-20 lg:mb-10'%>
+            <%= f.submit (t "defaults.register"), class: 'btn btn-block btn-secondary mt-10 mb-20 lg:mb-10'%>
           </div>
         </div>
       </div>

@@ -3,15 +3,15 @@
   <div class="flex flex-col gap-4 p-4 md:p-8">
     <div class="form-control mb-2">
       <%= f.label :title, class: 'label font-bold' %>
-      <%= f.text_field :title, class: 'input input-accent w-full' %>
+      <%= f.text_field :title, class: 'input border-azuki w-full' %>
     </div>
     <div class="form-control mb-2">
       <%= f.label :content, class: 'label font-bold' %>
-      <%= f.text_area :content, class: 'textarea textarea-accent w-full' %>
+      <%= f.text_area :content, class: 'textarea border-azuki w-full' %>
     </div>
     <div class="form-control mb-2">
       <%= f.label :image, class: 'label font-bold' %>
-      <%= f.file_field :image, onchange: 'imagePreview(event)', accept: 'image/*', class: 'file-input file-input-accent w-full' %>
+      <%= f.file_field :image, onchange: 'imagePreview(event)', accept: 'image/*', class: 'file-input border border-azuki w-full' %>
       <%= f.hidden_field :image_cache %>
     </div>
     <div class="form-control mb-2">
@@ -22,7 +22,7 @@
     </div>
     <div class="form-control mb-2">
       <%= f.label :ingredient_ids, class: 'label font-bold' %>
-      <%= f.collection_select :ingredient_ids, Ingredient.all, :id, :name, { prompt: '選択してください' }, { data: { controller: "select" }, controller: "select", id: 'select', class: 'input input-accent p-3 h-20', multiple: true, autocomplete: 'off' } %>
+      <%= f.collection_select :ingredient_ids, Ingredient.all, :id, :name, { prompt: '選択してください' }, { data: { controller: "select" }, controller: "select", id: 'select', class: 'input border-azuki p-3 h-20', multiple: true, autocomplete: 'off' } %>
     </div>
     <div class="form-control mb-2">
       <%= f.label :misosoup_base_ids, class: 'label font-bold' %>
@@ -32,7 +32,7 @@
         <%= link_to "登録はこちら", new_misosoup_base_path %>
       <% end %>
     </div>
-    <%= f.submit t('defaults.post'), class: 'btn btn-block btn-primary mt-10 mb-10'%>
+    <%= f.submit t('defaults.post'), class: 'btn btn-block btn-secondary mt-10 mb-10'%>
   </div>
 <% end %>
 
