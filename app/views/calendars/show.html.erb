@@ -5,7 +5,7 @@
       <p>写真をクリックすると、その日作ったみそ汁を見ることができます</p>
       <%= month_calendar partial: 'simple_calendar/month_calendar', events: @posts do |date, posts| %>
         <%= date.to_s.slice(8, 2) %>
-        <div class="m-auto lg:w-36 md:w-28 w-14 lg:h-36 md:h-28 h-14">
+        <div class="m-auto lg:w-30 md:w-24 w-10 lg:h-30 md:h-24 h-10">
           <% if posts.present? %>
             <%= link_to image_tag(posts[0].image.url), the_day_posts_path(date: posts[0].created_at)%>
           <% end %>
