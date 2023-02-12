@@ -7,8 +7,12 @@
     <button class="fa-solid fa-camera"></button>
     <span class="btm-nav-label"><%= t('defaults.post') %></span>
   <% end %>
-  <%= link_to mypage_path, class: 'hover:bg-stone-200 active:bg-stone-300 rounded-full' do %>
+  <%= link_to calendar_path, class: 'hover:bg-stone-200 active:bg-stone-300 rounded-full' do %>
     <button class="fa-solid fa-calendar-days"></button>
-    <span class="btm-nav-label"><%= t('defaults.mypage') %></span>
+    <span class="btm-nav-label"><%= t('defaults.calendar') %></span>
+  <% end %>
+  <%= link_to misosoup_bases_path, class: 'hover:bg-stone-200 active:bg-stone-300 rounded-full' do %>
+    <button class="fa-solid fa-spoon"></button>
+    <span class="btm-nav-label"><%= t('defaults.misosoup_base') %></span>
   <% end %>
 </div>

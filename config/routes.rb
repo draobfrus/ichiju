@@ -13,9 +13,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :mypage, only: :show
+  resource :calendar, only: :show
 
-  resources :misosoup_bases, only: %i[new create destroy]
+  resources :misosoup_bases, only: %i[index new create destroy]
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

@@ -1,0 +1,31 @@
+<div class="py-6 md:py-8">
+  <div class="max-w-screen-xl px-6 md:px-10 mx-auto">
+    <div class="mb-10 md:mb-16 text-center">
+      <h2 class="text-2xl lg:text-3xl font-bold mb-4 md:mb-6"><%= t('.title') %></h2>
+      <%= link_to "登録する", new_misosoup_base_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 mx-10 sm:mx-6">
+    <% @misosoup_bases.each do |misosoup_base| %>
+      <div class="card bg-stone-200 p-4">
+        <div class="flex items-start justify-center">
+          <%= image_tag misosoup_base.item_image_urls, size: '128x128' %>
+          <div class="card-body">
+            <div class="card-title">
+              <%= link_to misosoup_base.item_name, misosoup_base.item_url, class:'no-underline hover:underline' %>
+            </div>
+            <p>価格：<%= misosoup_base.item_price %>円</p>
+            <div class="flex justify-end">
+              <%= link_to misosoup_base_path(misosoup_base), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete?') } do %>
+                <button class="btn btn-ghost md:btn-lg">
+                  <i class="fa-solid fa-trash md:fa-2x"></i>
+                </button>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
