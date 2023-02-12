@@ -20,7 +20,7 @@ class MisosoupBasesController < ApplicationController
     unless current_user.registered?(@misosoup_base)
       @misosoup_base.save!
       current_user.register(@misosoup_base)
-      redirect_to new_misosoup_base_url
+      redirect_to misosoup_bases_url, success: t('defaults.message.registered', word: t('defaults.misosoup_base'))
     else
       flash.now[:danger] = 'すでに登録しています'
       render :new, status: :unprocessable_entity

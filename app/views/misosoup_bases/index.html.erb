@@ -18,9 +18,11 @@
             <p>価格：<%= misosoup_base.item_price %>円</p>
             <div class="flex justify-end">
               <%= link_to misosoup_base_path(misosoup_base), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete?') } do %>
-                <button class="btn btn-ghost md:btn-lg">
-                  <i class="fa-solid fa-trash md:fa-2x"></i>
-                </button>
+                <div class="absolute bottom-0 right-0 p-2">
+                  <button class="btn btn-ghost md:btn-lg">
+                    <i class="fa-solid fa-trash md:fa-2x"></i>
+                  </button>
+                </div>
               <% end %>
             </div>
           </div>

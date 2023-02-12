@@ -19,6 +19,7 @@ ja:
       require_login: "ログインしてください"
       success: "%{word}しました"
       danger: "%{word}できませんでした"
+      registered: "%{word}を登録しました"
       updated: "更新しました"
       not_updated: "更新できませんでした"
       deleted: "削除しました"
@@ -46,6 +47,7 @@ ja:
       title: "おみそ・おだし一覧"
     new:
       title: "おみそ・おだしを追加"
+      results: "検索結果"
   calendars:
     show:
       title: "みそ汁カレンダー"
