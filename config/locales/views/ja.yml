@@ -7,7 +7,8 @@ ja:
     profile: "プロフィール"
     home: "ホーム"
     post: "投稿"
-    mypage: "マイページ"
+    calendar: "カレンダー"
+    misosoup_base: "おみそ・おだし"
     terms_of_use: "利用規約"
     privacy_policy: "プライバシーポリシー"
     contact: "お問い合わせ"
@@ -23,6 +24,9 @@ ja:
       deleted: "削除しました"
       delete?: "削除しますか？"
       are_you_sure: "%{word}してよろしいですか？"
+  time:
+    formats:
+      short: "%Y年%m月%d日"
   views:
     pagination:
       first: "最初"
@@ -37,6 +41,14 @@ ja:
       title: "投稿詳細"
     edit:
       title: "投稿編集"
+  misosoup_bases:
+    index:
+      title: "おみそ・おだし一覧"
+    new:
+      title: "おみそ・おだしを追加"
+  calendars:
+    show:
+      title: "みそ汁カレンダー"
   simple_calendar:
     previous: "<<"
     next: ">>"
