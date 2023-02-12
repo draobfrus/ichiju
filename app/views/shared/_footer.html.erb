@@ -1,14 +1,15 @@
-<footer class="footer footer-center p-10 bg-base-100 rounded">
-  <div class="flex flex-col items-center bg-base-100">
-    <div class="grid grid-flow-col gap-20 text-base-content">
+<footer class="footer footer-center pt-10 bg-stone-200">
+  <div class="flex justify-between items-center flex-wrap">
+    <%= image_tag 'footer_logo.png', class: 'h-24 w-32' %>
+  </div>
+  <div class="flex flex-col items-center">
+    <div>
+      <p>© 2023 - ichiju. All rights reserved.</p>
+    </div>
+    <div class="grid grid-flow-col gap-4 pb-6">
       <%= link_to t('defaults.terms_of_use'), "#", class: "btn btn-ghost rounded-full" %>
       <%= link_to t('defaults.privacy_policy'), "#", class: "btn btn-ghost rounded-full" %>
       <%= link_to t('defaults.contact'), "#", class: "btn btn-ghost rounded-full" %>
-    </div>
-    <div>
-      <div class="text-base-content text-sm text-center">
-        Copyright © 2022
-      </div>
     </div>
   </div>
 </footer>

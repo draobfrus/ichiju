@@ -1,39 +1,81 @@
 <div class='top-wrapper'>
-  <div class='top-inner-text'>
-    <h1>一汁</h1>
-    <button class='btn btn-primary'>ボタン</button>
+  <div class="flex flex-wrap mx-auto mb-10 w-2/3">
+    <%= image_tag 'illustration.png', class: 'w-full md:w-1/2' %>
+    <div class="w-full md:w-1/2">
+      <%= image_tag 'catch_copy.png' %>
+      <div class="text-md text-center text-azuki font-bold pt-10">
+        <p>毎日のごはん作りを頑張りたい、あなたへ。<p>
+        <p>まずは<span class="bg-ohagi">「みそ汁」</span>から始めてみませんか？<p>
+        <p class="mt-10">一汁は、日々のみそ汁作りを応援する<p>
+        <p>みそ汁特化SNSサービスです。<p>
+      </div>
+    </div>
   </div>
-  <div class='top-inner-text'>
-    <h1>一汁</h1>
-    <button class='btn btn-primary'>ボタン</button>
+
+  <h1 class="border-t border-ohagi font-bold text-2xl text-center pt-10">こんなときに「一汁」</h1>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-20 mx-20 sm:mx-32">
+    <div class="card flex flex-col mt-10 shadow-xl">
+      <%= image_tag 'top_icon_01.png' %>
+      <div class="card-body items-center bg-ohagi">
+        <h2 class="card-title mb-6">
+          みんなのみそ汁を</br>
+          覗いてみよう
+        </h2>
+        <p class="text-sm">
+          みそ汁のマンネリ化に悩んでいませんか？</br>
+          悩んだら「投稿一覧」からみんなの投稿をチェック。</br>
+          新しい発見があるかも？
+        </p>
+      </div>
+    </div>
+    <div class="card flex flex-col mt-10 shadow-xl">
+      <%= image_tag 'top_icon_02.png' %>
+      <div class="card-body items-center bg-ohagi">
+        <h2 class="card-title mb-6">
+          作ったみそ汁を</br>
+          投稿しよう
+        </h2>
+        <p class="text-sm">
+          今日のごはん作りもお疲れ様でした！</br>
+          アツアツのうちに、みそ汁を投稿しましょう。</br>
+          写真と具材を選ぶだけで簡単に投稿できます。
+        </p>
+      </div>
+    </div>
+    <div class="card flex flex-col mt-10 shadow-xl">
+      <%= image_tag 'top_icon_03.png' %>
+      <div class="card-body items-center bg-ohagi">
+        <h2 class="card-title mb-6">
+          カレンダーを</br>
+          見てみよう
+        </h2>
+        <p class="text-sm">
+          「みそ汁カレンダー」で、みそ汁を作った日をチェック。</br>
+          写真付きで、どんなみそ汁を作ったのか一目で分かります。</br>
+          自分だけのカレンダーを作ろう！
+        </p>
+      </div>
+    </div>
+    <div class="card flex flex-col mt-10 shadow-xl">
+      <%= image_tag 'top_icon_04.png' %>
+      <div class="card-body items-center bg-ohagi">
+        <h2 class="card-title mb-6">
+          おみそ・おだしを</br>
+          登録しよう
+        </h2>
+        <p class="text-sm">
+          みそ汁に欠かせないおみそとおだし。</br>
+          あらかじめ登録しておけば、使用したおみそ・おだしの投稿もできます。</br>
+          みんなのオススメおみそ・おだしもチェック！
+        </p>
+      </div>
+    </div>
   </div>
-  <div class='top-inner-text'>
-    <h1>一汁</h1>
-    <button class='btn btn-primary'>ボタン</button>
-  </div>
-  <div class='top-inner-text'>
-    <h1>一汁</h1>
-    <button class='btn btn-primary'>ボタン</button>
-  </div>
-  <div class='top-inner-text'>
-    <h1>一汁</h1>
-    <button class='btn btn-primary'>ボタン</button>
-  </div>
-  <div class='top-inner-text'>
-    <h1>一汁</h1>
-    <button class='btn btn-primary'>ボタン</button>
-  </div>
-  <div class='top-inner-text'>
-    <h1>一汁</h1>
-    <button class='btn btn-primary'>ボタン</button>
-  </div>
-  <div class='top-inner-text'>
-    <h1>一汁</h1>
-    <button class='btn btn-primary'>ボタン</button>
-  </div>
-  <div class='top-inner-text'>
-    <h1>一汁</h1>
-    <button class='btn btn-primary'>ボタン</button>
+
+  <div class="border-t border-ohagi pt-10 pb-20 text-center">
+    <p class="pb-6">今日から始めてみませんか？</p>
+    <%= link_to 'ユーザー登録して始める', new_user_path, class: 'btn btn-secondary md:btn-lg'%>
   </div>
   <%= render partial: 'shared/footer' %>
 </div>

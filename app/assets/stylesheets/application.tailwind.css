@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 @layer components {
+  /* Check Box */
+  input[type="checkbox"] {
+    @apply mt-4 w-4 h-4;
+  }
+
+  /* Kaminari */
+  .current {
+    @apply border-none pointer-events-none;
+  }
+
   /* Simple Calendar */
   .day {
     @apply p-2;

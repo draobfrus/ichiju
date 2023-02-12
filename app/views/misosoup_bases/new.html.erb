@@ -1,22 +1,55 @@
-<h1>商品検索</h1>
-<%= form_with url: new_misosoup_base_path, method: :get, local: true do |f| %>
-  <%= f.search_field :keyword, class: 'input input-primary' %>
-  <%= f.submit '商品を検索する', class: 'btn btn-primary' %>
-<% end %>
+<div class="py-6 md:py-8">
+  <div class="max-w-screen-xl px-6 md:px-10 mx-auto">
+    <div class="mb-10 md:mb-16">
+      <h2 class="text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6"><%= t('.title') %></h2>
+    </div>
 
-<h1>検索結果表示</h1>
-<% if @results.present? %>
-  <% @results.first(5).each do |result| %>
-    <%= result['itemCode'] %></br>
-    <%= link_to result['itemName'], result['itemUrl'] %></br>
-    価格：<%= result['itemPrice'] %>円
-    <%= image_tag(result['mediumImageUrls'][0]) %>
-    <%= link_to '登録する',
-      misosoup_bases_path(code: result['itemCode'],
-                          name: result['itemName'],
-                          url: result['itemUrl'],
-                          price: result['itemPrice'],
-                          image: result['mediumImageUrls'][0]),
-      data: { 'turbo_method': :post } %>
-  <% end %>
-<% end %>
+    <div class="mb-2 text-sm font-medium" >
+      <div class="relative mx-auto w-2/3 sm:w-3/4">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <%= form_with url: new_misosoup_base_path, method: :get, local: true do |f| %>
+          <%= f.search_field :keyword,  placeholder: 'キーワードを入力してください', class: 'input w-full p-4 pl-10 text-sm border border-azuki rounded-lg bg-stone-50' %>
+          <%= f.submit '商品を検索する', class: 'absolute top-1 right-1 bottom-1 cursor-pointer text-stone-100 bg-primary focus:bg-primary-focus font-medium rounded-lg text-sm px-4 py-2' %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="m-10 md:m-16">
+      <h2 class="text-lg lg:text-xl text-center mb-4 md:mb-6"><%= t('.results') %></h2>
+    </div>
+
+    <% if @results.present? %>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 mx-10 sm:mx-6">
+        <% @results.first(50).each do |result| %>
+          <div class="card bg-stone-200 p-4">
+            <div class="flex items-start">
+              <%= image_tag(result['mediumImageUrls'][0]) %>
+              <div class="card-body">
+                <div class="card-title">
+                  <%= link_to result['itemName'], result['itemUrl'], class:'no-underline hover:underline' %>
+                </div>
+                <p>価格：<%= result['itemPrice'] %>円</p>
+                <div class="flex justify-end">
+                  <%= link_to '商品を追加する', misosoup_bases_path(code: result['itemCode'],
+                                                                  name: result['itemName'],
+                                                                  url: result['itemUrl'],
+                                                                  price: result['itemPrice'],
+                                                                  image: result['mediumImageUrls'][0]),
+                                                                  class: 'btn btn-secondary',
+                                                                  data: { 'turbo_method': :post } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <%= paginate @results %>
+    <% else %>
+      <div class="m-10 md:m-16">
+        <h2 class="text-md lg:text-lg text-center mb-4 md:mb-6">商品が見つかりません</h2>
+      </div>
+    <% end %>
+  </div>
+</div>

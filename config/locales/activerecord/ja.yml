@@ -18,6 +18,7 @@ ja:
         content: "本文"
         image: "写真"
         ingredient_ids: "使用した食材"
+        misosoup_base_ids: "使用したおみそ・おだし"
   attributes:
     id: "ID"
     created_at: "作成日時"

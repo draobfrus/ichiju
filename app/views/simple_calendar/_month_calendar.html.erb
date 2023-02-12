@@ -14,7 +14,7 @@
           <% end %>
         </div>
       </div>
-        <table class="table-fixed w-full pb-30 rounded-lg bg-stone-50">
+        <table class="table-fixed w-full pb-30 rounded-lg bg-white">
           <thead>
             <tr class="border-b border-stone-100">
               <% date_range.slice(0, 7).each do |day| %>
@@ -28,7 +28,7 @@
           </thead>
           <tbody valign="top">
             <% date_range.each_slice(7) do |week| %>
-              <tr class="lg:w-40 md:w-30 w-20 lg:h-40 md:h-30 h-20 xl:text-sm text-xs">
+              <tr class="lg:w-40 md:w-30 w-20 lg:h-40 md:h-30 h-20 xl:text-sm text-xs text-start">
                 <% week.each do |day| %>
                     <%= content_tag :td, class: calendar.td_classes_for(day) do %>
                       <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>

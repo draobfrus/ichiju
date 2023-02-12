@@ -1,14 +1,18 @@
 <div class="btm-nav fixed bottom-0 left-0 right-0 z-20">
-  <%= link_to posts_path, class: 'hover:bg-accent active:bg-accent-focus rounded-full text-accent-content' do %>
+  <%= link_to posts_path, class: 'hover:bg-stone-200 active:bg-stone-300 rounded-full' do %>
     <button class="fa-solid fa-house-chimney"></button>
     <span class="btm-nav-label"><%= t('defaults.home') %></span>
   <% end %>
-  <%= link_to new_post_path, class: 'hover:bg-accent active:bg-accent-focus rounded-full text-accent-content' do %>
+  <%= link_to new_post_path, class: 'hover:bg-stone-200 active:bg-stone-300 rounded-full' do %>
     <button class="fa-solid fa-camera"></button>
     <span class="btm-nav-label"><%= t('defaults.post') %></span>
   <% end %>
-  <%= link_to mypage_path, class: 'hover:bg-accent active:bg-accent-focus rounded-full text-accent-content' do %>
+  <%= link_to calendar_path, class: 'hover:bg-stone-200 active:bg-stone-300 rounded-full' do %>
     <button class="fa-solid fa-calendar-days"></button>
-    <span class="btm-nav-label"><%= t('defaults.mypage') %></span>
+    <span class="btm-nav-label"><%= t('defaults.calendar') %></span>
+  <% end %>
+  <%= link_to misosoup_bases_path, class: 'hover:bg-stone-200 active:bg-stone-300 rounded-full' do %>
+    <button class="fa-solid fa-spoon"></button>
+    <span class="btm-nav-label"><%= t('defaults.misosoup_base') %></span>
   <% end %>
 </div>
