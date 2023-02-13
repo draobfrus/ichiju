@@ -6,7 +6,7 @@
       </div>
       <%= form_with model: search_form, url: search_posts_path, scope: :q, method: :get, local: true do |f| %>
         <%= f.search_field :title_or_content, placeholder: '今日はどんな一杯にする？', class: 'input w-full p-4 pl-10 text-sm border border-azuki rounded-lg' %>
-        <%= f.submit 'みそ汁を検索する', class: 'absolute top-1 right-1 bottom-1 cursor-pointer text-stone-100 bg-primary focus:bg-primary-focus font-medium rounded-lg text-sm px-4 py-2' %>
+        <%= f.submit '検索する', class: 'absolute top-1 right-1 bottom-1 cursor-pointer text-stone-100 bg-primary focus:bg-primary-focus font-medium rounded-lg text-sm px-4 py-2' %>
       <% end %>
     </div>
   </div>
