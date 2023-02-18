@@ -34,7 +34,7 @@
 /vendor/bundle
 
 # Ignore database.yml
-/config/database.yml
+# /config/database.yml
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
