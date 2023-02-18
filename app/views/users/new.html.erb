@@ -16,14 +16,6 @@
               <%= f.email_field :email, class: 'input border-azuki w-full' %>
             </div>
             <div class="form-control mb-2">
-              <%= f.label :birthplace_code, class: 'label  font-bold' %>
-              <%= f.collection_select :birthplace_code, JpPrefecture::Prefecture.all, :code, :name, { include_blank: true }, class: 'select border-azuki w-full' %>
-            </div>
-            <div class="form-control mb-2">
-              <%= f.label :living_place_code, class: 'label  font-bold' %>
-              <%= f.collection_select :living_place_code, JpPrefecture::Prefecture.all, :code, :name, { include_blank: true }, class: 'select border-azuki w-full' %>
-            </div>
-            <div class="form-control mb-2">
               <%= f.label :password, '*パスワード', class: 'label  font-bold' %>
               <%= f.password_field :password, class: 'input border-azuki w-full' %>
             </div>
