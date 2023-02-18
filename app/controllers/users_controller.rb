@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to login_url, success: t('defaults.message.success', word: t('defaults.register'))
+      auto_login(@user)
+      redirect_to posts_url, success: t('defaults.message.success', word: t('defaults.register_and_login'))
     else
       flash.now[:danger] = t('defaults.message.danger', word: t('defaults.register'))
       render :new, status: :unprocessable_entity

@@ -4,6 +4,7 @@ ja:
     login: "ログイン"
     logout: "ログアウト"
     register: "ユーザー登録"
+    register_and_login: "ユーザー登録とログイン"
     profile: "プロフィール"
     home: "ホーム"
     post: "投稿"
@@ -17,7 +18,7 @@ ja:
     delete: "削除"
     message:
       require_login: "ログインしてください"
-      success: "%{word}しました"
+      success: "%{word}に成功しました"
       danger: "%{word}できませんでした"
       registered: "%{word}を登録しました"
       updated: "更新しました"
