@@ -82,11 +82,4 @@ test:
 #
 production:
   <<: *default
-  # database: cldeb4iml00i09tryczrrepuk
-  # username: cldeb4imj00hy9try49vq3vss
-  # password: <%= ENV['ICHIJU_DATABASE_PASSWORD'] %>
-  # host: <%= ENV['HOST'] %>
   url: <%= ENV['HEROKU_POSTGRESQL_PINK_URL'] %>
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
