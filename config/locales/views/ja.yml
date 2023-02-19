@@ -16,6 +16,7 @@ ja:
     edit: "編集"
     update: "更新"
     delete: "削除"
+    search: "検索"
     message:
       require_login: "ログインしてください"
       success: "%{word}に成功しました"
