@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  .ingredient-tag {
+    @apply text-xs inline-block py-1 px-2.5 text-center whitespace-nowrap font-bold text-stone-50 rounded-full;
+  }
+
   /* Check Box */
   input[type="checkbox"] {
     @apply mt-4 w-4 h-4;
