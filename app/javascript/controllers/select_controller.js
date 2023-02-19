@@ -8,6 +8,10 @@ export default class extends Controller {
         remove_button: {
         }
       },
+      onItemAdd:function(){
+        this.setTextboxValue('');
+        this.refreshOptions();
+      },
       persist: false,
       create: false,
     });
