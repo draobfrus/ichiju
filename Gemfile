@@ -85,6 +85,7 @@ gem "dotenv-rails"
 
 # Sitemap
 gem "sitemap_generator"
+gem "aws-sdk"
 
 # Cron jobs
 gem "whenever"
