@@ -49,3 +49,7 @@ yarn-error.log
 
 # Ignore dotenv file
 .env
+
+# Ignore sitemap.xml
+public/sitemap.xml
+public/sitemap.xml.gz
