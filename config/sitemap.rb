@@ -24,11 +24,11 @@ SitemapGenerator::Sitemap.create do
   #
   # Add '/articles'
   #
-    add posts_path, :priority => 0.7, :changefreq => 'daily'
-  #
-  # Add all articles:
-  #
-  Post.find_each do |post|
-    add post_path(post), :lastmod => post.updated_at
-  end
+  #   add posts_path, :priority => 0.7, :changefreq => 'daily'
+  # #
+  # # Add all articles:
+  # #
+  # Post.find_each do |post|
+  #   add post_path(post), :lastmod => post.updated_at
+  # end
 end
