@@ -6,8 +6,8 @@ class MisosoupBasesController < ApplicationController
   def new
     # params[:keyword]に合致したデータをresultsに格納する
     if params[:keyword].present?
-      @results = RakutenWebService::Ichiba::Item.search(keyword: params[:keyword])
-      @results = Kaminari.paginate_array(@results.to_a).page(params[:page]).per(10)
+      @results = RakutenWebService::Ichiba::Item.search(keyword: params[:keyword], genreId: '100300').first(30)
+      @results = Kaminari.paginate_array(@results.to_a).page(params[:page]).per(5)
     end
   end
 
