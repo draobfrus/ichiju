@@ -7,7 +7,7 @@
         <%= date.to_s.slice(8, 2) %>
         <div class="m-auto lg:w-30 md:w-24 w-10 lg:h-30 md:h-24 h-10">
           <% if posts.present? %>
-            <%= link_to image_tag(posts[0].image.url), the_day_posts_path(date: posts[0].created_at)%>
+            <%= link_to image_tag(posts[0].image.url), search_calendar_path(date: posts[0].created_at)%>
           <% end %>
         </div>
       <% end %>

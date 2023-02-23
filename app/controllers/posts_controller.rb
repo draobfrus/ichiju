@@ -2,17 +2,23 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update destroy]
 
   def index
-    if params[:ingredient_name].present?
-      posts = Post.with_ingredient(params[:ingredient_name])
-    else
-      posts = Post.all
-    end
+    posts = if params[:ingredient_name].present?
+              Post.with_ingredient(params[:ingredient_name])
+            else
+              Post.all
+            end
     @posts = posts.includes(:user).order(created_at: :desc).page(params[:page])
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   def new
     @post = Post.new
   end
+
+  def edit; end
 
   def create
     @post = current_user.posts.new(post_params)
@@ -24,12 +30,6 @@ class PostsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-  def show
-    @post = Post.find(params[:id])
-  end
-
-  def edit; end
 
   def update
     @post.assign_attributes(post_params)
@@ -44,10 +44,6 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy!
     redirect_to posts_url, success: t('defaults.message.success', word: t('defaults.delete')), status: :see_other
-  end
-
-  def the_day
-    @posts = Post.created_on(params[:date].to_date).order(created_at: :desc)
   end
 
   def search
@@ -74,8 +70,8 @@ class PostsController < ApplicationController
   end
 
   def misosoup_base_ids
-    if current_user.misosoup_bases.present?
-      params[:post][:misosoup_base_ids].compact_blank
-    end
+    return if current_user.misosoup_bases.blank?
+
+    params[:post][:misosoup_base_ids].compact_blank
   end
 end

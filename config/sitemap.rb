@@ -1,11 +1,11 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://www.ichiju.jp"
-SitemapGenerator::Sitemap.sitemaps_host = "https://s3-ap-northeast-1.amazonaws.com/#{ENV['S3_BUCKET_NAME']}"
+SitemapGenerator::Sitemap.default_host = 'https://www.ichiju.jp'
+SitemapGenerator::Sitemap.sitemaps_host = "https://s3-ap-northeast-1.amazonaws.com/#{ENV.fetch('S3_BUCKET_NAME', nil)}"
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
-  ENV['S3_BUCKET_NAME'],
-  aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-  aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-  aws_region: ENV['AWS_DEFAULT_REGION'],
+  ENV.fetch('S3_BUCKET_NAME', nil),
+  aws_access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID', nil),
+  aws_secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY', nil),
+  aws_region: ENV.fetch('AWS_DEFAULT_REGION', nil)
 )
 
 SitemapGenerator::Sitemap.create do
