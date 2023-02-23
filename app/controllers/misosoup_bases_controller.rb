@@ -5,10 +5,10 @@ class MisosoupBasesController < ApplicationController
 
   def new
     # params[:keyword]に合致したデータをresultsに格納する
-    if params[:keyword].present?
-      @results = RakutenWebService::Ichiba::Item.search(keyword: params[:keyword], genreId: '100300').first(30)
-      @results = Kaminari.paginate_array(@results.to_a).page(params[:page]).per(5)
-    end
+    return if params[:keyword].blank?
+
+    @results = RakutenWebService::Ichiba::Item.search(keyword: params[:keyword], genreId: '100300').first(30)
+    @results = Kaminari.paginate_array(@results.to_a).page(params[:page]).per(5)
   end
 
   def create
@@ -17,13 +17,13 @@ class MisosoupBasesController < ApplicationController
                                       item_url: params[:url],
                                       item_price: params[:price],
                                       item_image_urls: params[:image])
-    unless current_user.registered?(@misosoup_base)
+    if current_user.registered?(@misosoup_base)
+      flash.now[:danger] = 'すでに登録しています'
+      render :new, status: :unprocessable_entity
+    else
       @misosoup_base.save!
       current_user.register(@misosoup_base)
       redirect_to misosoup_bases_url, success: t('defaults.message.registered', word: t('defaults.misosoup_base'))
-    else
-      flash.now[:danger] = 'すでに登録しています'
-      render :new, status: :unprocessable_entity
     end
   end
 

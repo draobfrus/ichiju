@@ -29,12 +29,12 @@ class Post < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 255 }
   validates :image, presence: true
-  validates :content, length: { maximum: 65535 }
+  validates :content, length: { maximum: 65_535 }
 
   scope :with_ingredient, ->(ingredient_name) { joins(:ingredients).where(ingredients: { name: ingredient_name }) }
   scope :title_contain, ->(word) { where('title LIKE ?', "%#{word}%") }
   scope :content_contain, ->(word) { where('content LIKE ?', "%#{word}%") }
-  scope :created_on, -> (date) { where(created_at: date.all_day) }
+  scope :created_on, ->(date) { where(created_at: date.all_day) }
 
   def save_with(ingredient_ids, misosoup_base_ids)
     ActiveRecord::Base.transaction do
@@ -44,12 +44,11 @@ class Post < ApplicationRecord
       save!
     end
     true
-
-    rescue StandardError
+  rescue StandardError
     false
   end
 
   def start_time
-    self.created_at
+    created_at
   end
 end
