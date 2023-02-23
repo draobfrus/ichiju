@@ -23,7 +23,7 @@
     </div>
     <div class="form-control mb-2">
       <%= f.label :ingredient_ids, class: 'label font-bold' %>
-      <%= f.collection_select :ingredient_ids, Ingredient.all, :id, :name, { prompt: '選択してください' }, { data: { controller: "select" }, controller: "select", id: 'select', class: 'input border-azuki p-3 h-20', multiple: true, autocomplete: 'off' } %>
+      <%= f.collection_select :ingredient_ids, Ingredient.all, :id, :name, { prompt: '食材を検索してください' }, { data: { controller: "select" }, controller: "select", id: 'select', class: 'input border-azuki p-3 h-20', multiple: true, autocomplete: 'off' } %>
     </div>
     <div class="form-control mb-2">
       <%= f.label :misosoup_base_ids, class: 'label font-bold' %>
