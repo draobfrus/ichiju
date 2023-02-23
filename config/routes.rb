@@ -9,13 +9,12 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
 
   resources :posts do
-    collection do
-      get :the_day
-      get :search
-    end
+    get :search, on: :collection
   end
 
-  resource :calendar, only: :show
+  resource :calendar, only: :show do
+    get :search
+  end
 
   resources :misosoup_bases, only: %i[index new create destroy]
 
