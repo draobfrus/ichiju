@@ -103,6 +103,7 @@ group :development, :test do
   # Code analize
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
+  gem "rubocop-rspec", require: false
   gem "bullet"
 end
 
