@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_27_134855) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_25_214047) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_bookmarks_on_post_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name", limit: 255, null: false
@@ -88,6 +97,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_27_134855) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "bookmarks", "posts"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "post_ingredients", "ingredients"
   add_foreign_key "post_ingredients", "posts"
   add_foreign_key "post_misosoup_bases", "misosoup_bases"
