@@ -56,6 +56,9 @@ gem 'kaminari'
 # Model
 gem 'enum_help'
 
+# Decorator
+gem 'draper'
+
 # Table/Schema
 gem 'annotate'
 

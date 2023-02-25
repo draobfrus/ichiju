@@ -25,6 +25,8 @@ class User < ApplicationRecord
   has_many :user_misosoup_bases, dependent: :destroy
   has_many :misosoup_bases, through: :user_misosoup_bases
 
+  mount_uploader :avatar, AvatarUploader
+
   validates :username, presence: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }

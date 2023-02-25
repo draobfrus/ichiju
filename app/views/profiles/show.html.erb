@@ -1,0 +1,48 @@
+<div class="h-full">
+  <div class="border-b-2 block md:flex">
+
+    <div class="w-full rounded-lg md:w-2/5 p-4 sm:p-6 lg:p-8 bg-white shadow-md">
+      <div class="flex justify-between">
+        <span class="text-xl font-semibold block"><%= current_user.username %> さんのプロフィール</span>
+        <%= link_to '編集', edit_profile_path, class: 'mt-2 text-md font-bold text-white bg-primary rounded-full px-5 py-2 hover:bg-primary-focus' %>
+      </div>
+
+      <div class="avatar p-8 mx-2 flex justify-center">
+      </div>
+      <div class="avatar p-8 mx-2 flex justify-center">
+        <div class="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+          <%= image_tag current_user.avatar_url, class: 'max-w-xs w-50 h-50 items-center' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full rounded-lg md:w-3/5 p-8 bg-white lg:ml-4 shadow-md">
+      <div class="rounded  shadow p-6">
+        <div class="pb-6">
+          <label for="name" class="font-semibold block pb-1">ユーザーネーム</label>
+          <div class="flex border-1 rounded-r px-4 py-2 w-full">
+            <%= current_user.username %>
+          </div>
+        </div>
+        <div class="pb-4">
+          <label for="name" class="font-semibold block pb-1">出身地</label>
+          <div class="flex border-1 rounded-r px-4 py-2 w-full">
+            <%= current_user.birthplace.name if current_user.birthplace_code? %>
+          </div>
+        </div>
+        <div class="pb-4">
+          <label for="name" class="font-semibold block pb-1">居住地</label>
+          <div class="flex border-1 rounded-r px-4 py-2 w-full">
+            <%= current_user.living_place.name if current_user.living_place_code? %>
+          </div>
+        </div>
+        <div class="pb-4">
+          <label for="name" class="font-semibold block pb-1">メールアドレス</label>
+          <div class="flex border-1 rounded-r px-4 py-2 w-full">
+            <%= current_user.email %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
