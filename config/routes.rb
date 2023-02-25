@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
+  resource :profile, only: %i[show edit update]
+
   resource :calendar, only: :show do
     get :search
   end
