@@ -31,13 +31,13 @@
         <div class="pb-4">
           <label for="name" class="font-semibold block pb-1">出身地</label>
           <div class="flex border-1 rounded-r px-4 py-2 w-full">
-            <%= current_user.birthplace_code %>
+            <%= current_user.birthplace.name if current_user.birthplace_code? %>
           </div>
         </div>
         <div class="pb-4">
           <label for="name" class="font-semibold block pb-1">居住地</label>
           <div class="flex border-1 rounded-r px-4 py-2 w-full">
-            <%= current_user.living_place_code %>
+            <%= current_user.living_place.name if current_user.living_place_code? %>
           </div>
         </div>
         <div class="pb-4">
