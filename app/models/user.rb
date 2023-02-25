@@ -45,6 +45,18 @@ class User < ApplicationRecord
     id == object.user_id
   end
 
+  def bookmark(post)
+    bookmark_posts << post
+  end
+
+  def unbookmark(post)
+    bookmark_posts.destroy(post)
+  end
+
+  def bookmark?(post)
+    bookmark_posts.include?(post)
+  end
+
   def register(misosoup_base)
     misosoup_base.save!
     user_misosoup_bases.create!(misosoup_base_id: misosoup_base.id)
