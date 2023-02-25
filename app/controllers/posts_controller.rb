@@ -51,6 +51,9 @@ class PostsController < ApplicationController
     @posts = @search_form.search.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
+  def bookmarks
+  end
+
   private
 
   def post_params
