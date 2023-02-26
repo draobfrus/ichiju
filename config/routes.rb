@@ -9,16 +9,21 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
 
   resources :posts do
-    get :search, on: :collection
+    collection do
+      get 'search'
+      get 'bookmarks'
+    end
   end
 
   resource :profile, only: %i[show edit update]
 
   resource :calendar, only: :show do
-    get :search
+    get 'search'
   end
 
   resources :misosoup_bases, only: %i[index new create destroy]
+
+  resources :bookmarks, only: %i[create destroy]
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

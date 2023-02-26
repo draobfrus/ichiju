@@ -43,6 +43,7 @@ module Ichiju
     config.generators.system_tests = nil
 
     config.generators do |g|
+      g.skip_routes true # routingを自動生成しない
       g.helper false # helperを自動生成しない
     end
   end

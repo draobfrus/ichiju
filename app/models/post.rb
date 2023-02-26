@@ -24,6 +24,8 @@ class Post < ApplicationRecord
   has_many :ingredients, through: :post_ingredients
   has_many :post_misosoup_bases, dependent: :destroy
   has_many :misosoup_bases, through: :post_misosoup_bases
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmarking_users, through: :bookmarks, source: :user
 
   mount_uploader :image, ImageUploader
 
@@ -46,6 +48,10 @@ class Post < ApplicationRecord
     true
   rescue StandardError
     false
+  end
+
+  def bookmarked_by?(user)
+    bookmarking_users.include?(user)
   end
 
   def start_time

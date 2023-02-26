@@ -1,0 +1,9 @@
+<% if post.bookmarked_by?(current_user) %>
+  <%= link_to bookmark_path(current_user.bookmarks.find_by(post_id: post.id)), data: { turbo_method: :delete } do %>
+    <i class="fa-solid fa-bookmark fa-2x text-secondary"></i>
+  <% end %>
+<% else %>
+  <%= link_to bookmarks_path(post_id: post.id), data: { turbo_method: :post } do %>
+    <i class="fa-regular fa-bookmark fa-2x text-secondary"></i>
+  <% end %>
+<% end %>

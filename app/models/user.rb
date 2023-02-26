@@ -24,6 +24,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :user_misosoup_bases, dependent: :destroy
   has_many :misosoup_bases, through: :user_misosoup_bases
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_posts, through: :bookmarks, source: :post
 
   mount_uploader :avatar, AvatarUploader
 
@@ -41,6 +43,18 @@ class User < ApplicationRecord
 
   def own?(object)
     id == object.user_id
+  end
+
+  def bookmark(post)
+    bookmark_posts << post
+  end
+
+  def unbookmark(post)
+    bookmark_posts.destroy(post)
+  end
+
+  def bookmark?(post)
+    bookmark_posts.include?(post)
   end
 
   def register(misosoup_base)
