@@ -5,7 +5,9 @@
       <div class="card-body">
         <div class="flex gap-8 justify-end">
           <%# <%= render 'like_button' %>
-          <%= render 'bookmark', post: @post %>
+          <%= turbo_frame_tag 'bookmark' do %>
+            <%= render 'bookmark', post: @post %>
+          <% end %>
         </div>
         <h3 class="card-title text-2xl lg:text-3xl font-bold"><%= @post.title %></h2>
         <p>by <%=link_to @post.user.username, "#" %></p>
