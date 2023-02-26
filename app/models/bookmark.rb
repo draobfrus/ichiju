@@ -10,8 +10,9 @@
 #
 # Indexes
 #
-#  index_bookmarks_on_post_id  (post_id)
-#  index_bookmarks_on_user_id  (user_id)
+#  index_bookmarks_on_post_id              (post_id)
+#  index_bookmarks_on_post_id_and_user_id  (post_id,user_id) UNIQUE
+#  index_bookmarks_on_user_id              (user_id)
 #
 # Foreign Keys
 #
@@ -21,4 +22,6 @@
 class Bookmark < ApplicationRecord
   belongs_to :user
   belongs_to :post
+
+  validates :post_id, uniqueness: { scope: :user_id }
 end
