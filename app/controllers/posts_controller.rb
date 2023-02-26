@@ -52,6 +52,7 @@ class PostsController < ApplicationController
   end
 
   def bookmarks
+    @posts = current_user.bookmark_posts.order(created_at: :desc).page(params[:page])
   end
 
   private
