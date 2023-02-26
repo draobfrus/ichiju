@@ -3,10 +3,13 @@
     <%= link_to image_tag(post.image.url), post_path(post), class: 'w-full h-full flex justify-center items-center' %>
   </div>
   <div>
+    <div class="flex items-end justify-end">
+      <%= render partial: 'bookmark_button', locals: { post: post } %>
+    </div>
     <%= link_to post.title, post_path(post), class: 'text-primary hover:text-primary-focus md:text-lg font-bold' %>
     <p class="text-sm md:text-base mb-3 md:mb-4">
       by <%=link_to post.user.username, "#", class: 'hover:text-accent-focus'%>
     </p>
-    <%= render partial: 'posts/ingredient', locals: { post: post } %>
+    <%= render partial: 'ingredient', locals: { post: post } %>
   </div>
 </div>
