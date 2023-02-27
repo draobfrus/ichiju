@@ -37,6 +37,9 @@ ja:
       previous: "<<"
       next: ">>"
       truncate: "……"
+  users:
+    new:
+      title: "ユーザー登録"
   posts:
     new:
       title: "投稿作成"
