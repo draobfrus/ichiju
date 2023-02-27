@@ -18,8 +18,10 @@
         <%= render partial: 'misosoup_base', locals: { post: @post } %>
       </div>
     </div>
-    <% if current_user.own?(@post) %>
-      <%= render 'crud_menus' %>
+    <% if logged_in? %>
+      <% if current_user.own?(@post) %>
+        <%= render 'crud_menus' %>
+      <% end %>
     <% end %>
   </div>
 </div>
