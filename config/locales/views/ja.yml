@@ -6,6 +6,7 @@ ja:
     register: "ユーザー登録"
     register_and_login: "ユーザー登録とログイン"
     profile: "プロフィール"
+    bookmark: "ブックマーク"
     home: "ホーム"
     post: "投稿"
     calendar: "カレンダー"
@@ -37,13 +38,31 @@ ja:
       previous: "<<"
       next: ">>"
       truncate: "……"
-  posts:
+  users:
     new:
-      title: "投稿作成"
+      title: "ユーザー登録"
+  user_sessions:
+    new:
+      title: "ログイン"
+  profiles:
+    show:
+      title: "%{word} さんのプロフィール"
+    edit:
+      title: "プロフィール変更"
+  posts:
+    index:
+      title: "みそ汁一覧"
+    new:
+      title: "みそ汁投稿"
     show:
       title: "投稿詳細"
     edit:
       title: "投稿編集"
+    search:
+      title: "みそ汁一覧"
+      no_result: "検索結果がありません"
+    bookmarks:
+      title: ブックマーク一覧
   misosoup_bases:
     index:
       title: "おみそ・おだし一覧"
@@ -53,6 +72,9 @@ ja:
   calendars:
     show:
       title: "みそ汁カレンダー"
+    search:
+      title: "%{word} に作ったみそ汁"
+
   simple_calendar:
     previous: "<<"
     next: ">>"
