@@ -1,43 +1,30 @@
 module ApplicationHelper
-  def show_meta_tags
-    if display_meta_tags.blank?
-      assign_meta_tags
-    end
-    display_meta_tags
-  end
 
-  def assign_meta_tags(options = {})
-    defaults = t('meta_tags.defaults')
-    options.reverse_merge!(defaults)
-
-    site = options[:site]
-    title = options[:title]
-    description = options[:description]
-    keywords = options[:keywords]
-    image = options[:image].presence || image_url('image.png')
-
-    configs = {
+  def default_meta_tags
+    {
+      site: t('meta_tags.defaults.site'),
+      description: t('meta_tags.defaults.description'),
+      keywords: t('meta_tags.defaults.keywords'),
       separator: '|',
       reverse: true,
-      site: site,
-      title: title,
-      description: description,
-      keywords: keywords,
       canonical: request.original_url,
+      noindex: ! Rails.env.production?,
+      charset: "UTF-8",
+      icon: image_url('favicon.png'),
       og: {
-        type: 'article',
-        title: title.presence || site,
-        description: description,
+        type: 'website',
+        title: :title,
+        description: :description,
         url: request.original_url,
-        image: image,
-        site_name: site
+        image: image_url('image.png'),
+        site_name: :site,
+        local: 'ja-JP'
       },
       twitter: {
         site: '@draobfrus',
         card: 'summary',
+        image: image_url('image.png'),
       }
     }
-
-    set_meta_tags(configs)
   end
 end
