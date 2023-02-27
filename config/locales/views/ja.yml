@@ -72,6 +72,9 @@ ja:
   calendars:
     show:
       title: "みそ汁カレンダー"
+    search:
+      title: "%{word} に作ったみそ汁"
+
   simple_calendar:
     previous: "<<"
     next: ">>"
