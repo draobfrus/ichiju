@@ -1,8 +1,4 @@
 module ApplicationHelper
-  def page_title(page_title = '')
-    page_title.empty? ? '一汁' : "#{page_title} | 一汁"
-  end
-
   def show_meta_tags
     if display_meta_tags.blank?
       assign_meta_tags
