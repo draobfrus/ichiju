@@ -38,6 +38,9 @@ ja:
       previous: "<<"
       next: ">>"
       truncate: "……"
+  static_pages:
+    top:
+      title: "毎日に、あたたかな彩りを。"
   users:
     new:
       title: "ユーザー登録"
