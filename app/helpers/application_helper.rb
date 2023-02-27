@@ -1,21 +1,20 @@
 module ApplicationHelper
-
   def default_meta_tags
     {
-      site: t('meta_tags.defaults.site'),
-      title: t('meta_tags.defaults.title'),
+      site: "一汁",
+      title: "毎日に、あたたかな彩りを。",
       reverse: true,
       separator: '|',
-      description: t('meta_tags.defaults.description'),
-      keywords: t('meta_tags.defaults.keywords'),
+      description: "一汁は、毎日のごはん作りを頑張りたいあなたへ送る、ありそうでなかったみそ汁特化のサービス。作ったみそ汁を投稿して、自分だけのみそ汁カレンダーを作ろう。みそ汁の具材のマンネリ化解消にも。",
+      keywords: "みそ汁,自炊,ごはん",
       charset: "UTF-8",
       canonical: request.original_url,
-      noindex: ! Rails.env.production?,
+      noindex: !Rails.env.production?,
       icon: image_url('favicon.png'),
       og: {
-        site_name: t('meta_tags.defaults.site'),
-        title: t('meta_tags.defaults.title'),
-        description: t('meta_tags.defaults.description'),
+        site_name: "一汁",
+        title: "毎日に、あたたかな彩りを。",
+        description: "一汁は、毎日のごはん作りを頑張りたいあなたへ送る、ありそうでなかったみそ汁特化のサービス。作ったみそ汁を投稿して、自分だけのみそ汁カレンダーを作ろう。みそ汁の具材のマンネリ化解消にも。",
         type: 'website',
         url: request.original_url,
         image: image_url('image.png'),
