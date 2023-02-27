@@ -86,6 +86,9 @@ gem 'faker'
 # Manage environment variables
 gem 'dotenv-rails'
 
+# SEO measures
+gem 'meta-tags'
+
 # Sitemap
 gem 'sitemap_generator'
 gem 'aws-sdk-s3'
