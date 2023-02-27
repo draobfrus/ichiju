@@ -44,6 +44,11 @@ ja:
   user_sessions:
     new:
       title: "ログイン"
+  profiles:
+    show:
+      title: "%{word} さんのプロフィール"
+    edit:
+      title: "プロフィール変更"
   posts:
     index:
       title: "みそ汁一覧"
