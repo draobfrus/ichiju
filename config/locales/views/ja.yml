@@ -40,13 +40,21 @@ ja:
   users:
     new:
       title: "ユーザー登録"
-  posts:
+  user_sessions:
     new:
-      title: "投稿作成"
+      title: "ログイン"
+  posts:
+    index:
+      title: "みそ汁一覧"
+    new:
+      title: "みそ汁投稿"
     show:
       title: "投稿詳細"
     edit:
       title: "投稿編集"
+    search:
+      title: "みそ汁一覧"
+      no_result: "検索結果がありません"
   misosoup_bases:
     index:
       title: "おみそ・おだし一覧"
