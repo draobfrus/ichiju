@@ -6,6 +6,7 @@ ja:
     register: "ユーザー登録"
     register_and_login: "ユーザー登録とログイン"
     profile: "プロフィール"
+    bookmark: "ブックマーク"
     home: "ホーム"
     post: "投稿"
     calendar: "カレンダー"
@@ -55,6 +56,8 @@ ja:
     search:
       title: "みそ汁一覧"
       no_result: "検索結果がありません"
+    bookmarks:
+      title: ブックマーク一覧
   misosoup_bases:
     index:
       title: "おみそ・おだし一覧"
