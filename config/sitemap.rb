@@ -21,11 +21,11 @@ SitemapGenerator::Sitemap.create do
   # ユーザー登録
   add new_user_path
   # 投稿一覧
-  add posts_path, :priority => 0.7, :changefreq => 'daily'
+  add posts_path, priority: 0.7, changefreq: 'daily'
   # 各投稿詳細
   Post.find_each do |post|
-    add post_path(post), :priority => 0.7, :changefreq => 'daily', :lastmod => post.updated_at
+    add post_path(post), priority: 0.7, changefreq: 'daily', lastmod: post.updated_at
   end
   # 投稿検索
-  add search_posts_path, :changefreq => 'daily'
+  add search_posts_path, changefreq: 'daily'
 end
