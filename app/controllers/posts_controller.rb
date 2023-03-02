@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update destroy]
+  skip_before_action :require_login, only: %i[index show search]
 
   def index
     posts = if params[:ingredient_name].present?

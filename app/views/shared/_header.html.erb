@@ -1,27 +1,31 @@
 <header>
   <div class="navbar bg-neutral-content">
     <div class="navbar-start">
-      <div class="flex justify-between items-start flex-wrap">
-        <%= link_to (image_tag 'header_logo.png'), posts_path, class: 'h-15 w-24' %>
+      <div class="tooltip tooltip-right" data-tip="トップページに戻る">
+        <div class="flex justify-between items-start flex-wrap">
+          <%= link_to (image_tag 'header_logo.png'), root_path, class: 'h-15 w-24' %>
+        </div>
       </div>
     </div>
     <div class="navbar-end">
-      <%= link_to "#", class: "btn btn-ghost normal-case rounded-full" do %>
-        <i class="fa-solid fa-2x fa-circle-question"></i>
-      <% end %>
+      <div class="tooltip tooltip-left" data-tip="使い方ガイド">
+        <%= link_to "#", class: "btn btn-info btn-ghost normal-case rounded-full" do %>
+          <i class="fa-solid fa-2x fa-circle-question"></i>
+        <% end %>
+      </div>
       <div class="dropdown dropdown-hover dropdown-end">
         <div class="btn btn-ghost normal-case rounded-full">
           <i class="fa-solid fa-2x fa-user"></i>
         </div>
         <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
           <li>
-            <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete } %>
+            <%= link_to  t('defaults.bookmark'), bookmarks_posts_path %>
           </li>
           <li>
             <%= link_to t('defaults.profile'), profile_path %>
           </li>
           <li>
-            <%= link_to  t('defaults.bookmark'), bookmarks_posts_path %>
+            <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete } %>
           </li>
         </ul>
       </div>
