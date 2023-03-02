@@ -18,7 +18,7 @@
 # end
 #
 # sitemapを更新
-every 1.day at: '12:00 pm' do
+every 1.day at: '6:00 pm' do
   rake 'sitemap:refresh'
 end
 
