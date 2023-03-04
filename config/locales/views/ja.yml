@@ -41,6 +41,10 @@ ja:
   static_pages:
     top:
       title: "毎日に、あたたかな彩りを。"
+    terms:
+      title: "利用規約"
+    privacy:
+      title: "プライバシーポリシー"
   users:
     new:
       title: "ユーザー登録"
