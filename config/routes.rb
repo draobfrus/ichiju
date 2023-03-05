@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'static_pages#top'
   get 'terms', to: 'static_pages#terms'
   get 'privacy', to: 'static_pages#privacy'
-  get 'contact', to: redirect("https://docs.google.com/forms/d/e/1FAIpQLSdC_h_cqcu_Nn65NkOSk_g8ai7xy8uO-tuMxFHvzUanjM6AeQ/viewform")
+  get 'contact', to: redirect('https://docs.google.com/forms/d/e/1FAIpQLSdC_h_cqcu_Nn65NkOSk_g8ai7xy8uO-tuMxFHvzUanjM6AeQ/viewform')
 
   resources :users, only: %i[new create]
 
