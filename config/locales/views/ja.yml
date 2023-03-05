@@ -7,8 +7,8 @@ ja:
     register_and_login: "ユーザー登録とログイン"
     profile: "プロフィール"
     bookmark: "ブックマーク"
-    home: "ホーム"
-    post: "投稿"
+    posts: "一覧"
+    posting: "投稿"
     calendar: "カレンダー"
     misosoup_base: "みそだし"
     terms_of_use: "利用規約"
@@ -41,6 +41,10 @@ ja:
   static_pages:
     top:
       title: "毎日に、あたたかな彩りを。"
+    terms:
+      title: "利用規約"
+    privacy:
+      title: "プライバシーポリシー"
   users:
     new:
       title: "ユーザー登録"
