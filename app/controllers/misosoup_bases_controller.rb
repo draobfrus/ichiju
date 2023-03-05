@@ -32,4 +32,8 @@ class MisosoupBasesController < ApplicationController
     @misosoup_base.destroy!
     redirect_to misosoup_bases_url, success: t('defaults.message.success', word: t('defaults.delete')), status: :see_other
   end
+
+  def recommend
+
+  end
 end

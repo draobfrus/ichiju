@@ -24,7 +24,9 @@ Rails.application.routes.draw do
     get 'search'
   end
 
-  resources :misosoup_bases, only: %i[index new create destroy]
+  resources :misosoup_bases, only: %i[index new create destroy] do
+    get 'recommend', on: :collection
+  end
 
   resources :bookmarks, only: %i[create destroy]
 
