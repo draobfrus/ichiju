@@ -17,63 +17,75 @@
     </div>
   <% end %>
 
-  <h1 class="border-t border-ohagi font-bold text-2xl text-center pt-10">こんなときに「一汁」</h1>
+  <div class="py-6 sm:py-8 lg:py-12">
+    <div class="max-w-screen-xl px-4 md:px-8 mx-auto">
+      <h2 class="border-t border-ohagi font-bold text-2xl text-center pt-16">こんなときに「一汁」</h2>
+    </div>
+  </div>
 
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-20 mx-20">
-    <div class="card mt-10 shadow-xl">
-      <%= image_tag 'top_icon_01.png' %>
-      <div class="card-body items-center bg-ohagi">
-        <h2 class="card-title text-center mb-6">
-          みんなのみそ汁を</br>
-          覗いてみよう
-        </h2>
-        <p class="text-sm">
-          みそ汁のマンネリ化に悩んでいませんか？</br>
-          悩んだら「投稿一覧」からみんなの投稿をチェック。</br>
-          新しい発見があるかも？
-        </p>
+  <div class="max-w-screen-xl w-5/6 mx-auto mb-10 md:mb-16">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 sm:gap-12 xl:gap-12">
+      <div class="flex flex-col md:flex-row items-center gap-4 w-full border shadow-xl rounded-xl bg-ohagi">
+        <div class="group w-full bg-stone-50 md:w-24 lg:w-40 h-56 md:h-24 lg:h-40 block self-start shrink-0 overflow-hidden relative">
+          <%= image_tag 'top_icon_01.png', class: 'w-full h-full object-contain object-center' %>
+        </div>
+        <div class="flex flex-col">
+          <h2 class="text-lg font-bold p-2">
+            みんなのみそ汁を覗いてみよう
+          </h2>
+          <p class="p-2">
+            みそ汁のマンネリ化に悩んでいませんか？</br>
+            悩んだら「投稿一覧」からみんなの投稿をチェック。</br>
+            新しい発見があるかも？
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="card mt-10 shadow-xl">
-      <%= image_tag 'top_icon_02.png' %>
-      <div class="card-body items-center bg-ohagi">
-        <h2 class="card-title text-center mb-6">
-          作ったみそ汁を</br>
-          投稿しよう
-        </h2>
-        <p class="text-sm">
-          今日のごはん作りもお疲れ様でした！</br>
-          アツアツのうちに、みそ汁を投稿しましょう。</br>
-          写真と具材を選ぶだけで簡単に投稿できます。
-        </p>
+
+      <div class="flex flex-col md:flex-row items-center gap-4 w-full border shadow-xl rounded-xl bg-ohagi">
+        <div class="group w-full bg-stone-50 md:w-24 lg:w-40 h-56 md:h-24 lg:h-40 block self-start shrink-0 overflow-hidden relative">
+          <%= image_tag 'top_icon_02.png', class: 'w-full h-full object-contain object-center' %>
+        </div>
+        <div class="flex flex-col">
+          <h2 class="text-lg font-bold p-2">
+            作ったみそ汁を投稿しよう
+          </h2>
+          <p class="p-2">
+            今日のごはん作りもお疲れ様でした！</br>
+            アツアツのうちに、みそ汁を投稿しましょう。</br>
+            写真と具材を選ぶだけで簡単に投稿できます。
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="card mt-10 shadow-xl">
-      <%= image_tag 'top_icon_03.png' %>
-      <div class="card-body items-center bg-ohagi">
-        <h2 class="card-title text-center mb-6">
-          カレンダーを</br>
-          見てみよう
-        </h2>
-        <p class="text-sm">
-          「みそ汁カレンダー」で、みそ汁を作った日をチェック。</br>
-          写真付きで、どんなみそ汁を作ったのか一目で分かります。</br>
-          自分だけのカレンダーを作ろう！
-        </p>
+
+      <div class="flex flex-col md:flex-row items-center gap-4 w-full border shadow-xl rounded-xl bg-ohagi">
+        <div class="group w-full bg-stone-50 md:w-24 lg:w-40 h-56 md:h-24 lg:h-40 block self-start shrink-0 overflow-hidden relative">
+          <%= image_tag 'top_icon_03.png', class: 'w-full h-full object-contain object-center' %>
+        </div>
+        <div class="flex flex-col">
+          <h2 class="text-lg font-bold p-2">
+            カレンダーを見てみよう
+          </h2>
+          <p class="p-2">
+            「みそ汁カレンダー」で、いつ・どんなみそ汁を作ったのか一目で分かります。</br>
+            自分だけのカレンダーを作ろう！
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="card mt-10 shadow-xl">
-      <%= image_tag 'top_icon_04.png' %>
-      <div class="card-body items-center bg-ohagi">
-        <h2 class="card-title text-center mb-6">
-          おみそ・おだしを</br>
-          登録しよう
-        </h2>
-        <p class="text-sm">
-          みそ汁に欠かせないおみそとおだし。</br>
-          あらかじめ登録しておけば、使用したおみそ・おだしの投稿もできます。</br>
-          みんなのオススメおみそ・おだしもチェック！
-        </p>
+
+      <div class="flex flex-col md:flex-row items-center gap-4 w-full border shadow-xl rounded-xl bg-ohagi">
+        <div class="group w-full bg-stone-50 md:w-24 lg:w-40 h-56 md:h-24 lg:h-40 block self-start shrink-0 overflow-hidden relative">
+          <%= image_tag 'top_icon_04.png', class: 'w-full h-full object-contain object-center' %>
+        </div>
+        <div class="flex flex-col">
+          <h2 class="text-lg font-bold p-2">
+            おみそ・おだしを登録しよう
+          </h2>
+          <p class="p-2">
+            みそ汁に欠かせないおみそとおだし。</br>
+            登録しておけば、使用した商品の投稿もできます。</br>
+            みんなのオススメおみそ・おだしもチェック！
+          </p>
+        </div>
       </div>
     </div>
   </div>
