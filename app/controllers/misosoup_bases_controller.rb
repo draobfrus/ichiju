@@ -7,7 +7,7 @@ class MisosoupBasesController < ApplicationController
     # params[:keyword]に合致したデータをresultsに格納する
     return if params[:keyword].blank?
 
-    @results = RakutenWebService::Ichiba::Item.search(keyword: params[:keyword], genreId: '100300').first(30)
+    @results = RakutenWebService::Ichiba::Item.search(keyword: params[:keyword], genreId: '100300', NGKeyword: 'ふるさと納税').first(30)
     @results = Kaminari.paginate_array(@results.to_a).page(params[:page]).per(5)
   end
 
