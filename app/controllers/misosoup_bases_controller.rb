@@ -34,6 +34,22 @@ class MisosoupBasesController < ApplicationController
   end
 
   def recommend
+    if current_user.birthplace.present?
+      birthplace_miso = RakutenWebService::Ichiba::Item.search(keyword: current_user.birthplace.name + '産', genreId: '201213', NGKeyword: 'ふるさと納税').first(25)
+    end
 
+    if current_user.living_place.present?
+      living_place_miso = RakutenWebService::Ichiba::Item.search(keyword: current_user.living_place.name + '産', genreId: '201213', NGKeyword: 'ふるさと納税').first(25)
+    end
+    @familiar_miso = birthplace_miso.concat(living_place_miso).shuffle.first(3)
+
+    if current_user.birthplace.present?
+      birthplace_dashi = RakutenWebService::Ichiba::Item.search(keyword: current_user.birthplace.name, genreId: '410994').first(25)
+    end
+
+    if current_user.living_place.present?
+      living_place_dashi = RakutenWebService::Ichiba::Item.search(keyword: current_user.living_place.name, genreId: '410994').first(25)
+    end
+    @familiar_dashi = birthplace_dashi.concat(living_place_dashi).shuffle.first(3)
   end
 end
