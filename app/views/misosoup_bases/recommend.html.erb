@@ -1,13 +1,12 @@
-おすすめのおみそ
-<% if @familiar_miso.present? %>
-  <%= render partial: 'miso', locals: { miso: @familiar_miso } %>
-<% else %>
-  <p>ありません</p>
-<% end %>
-
 おすすめのおだし
 <% if @familiar_dashi.present? %>
   <%= render partial: 'dashi', locals: { dashi: @familiar_dashi } %>
+<% else %>
+  <p>ありません</p>
+<% end %>
+おすすめのおみそ
+<% if @familiar_miso.present? %>
+  <%= render partial: 'miso', locals: { miso: @familiar_miso } %>
 <% else %>
   <p>ありません</p>
 <% end %>

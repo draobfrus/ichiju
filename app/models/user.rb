@@ -65,4 +65,20 @@ class User < ApplicationRecord
   def registered?(misosoup_base)
     misosoup_bases.exists?(item_code: misosoup_base.item_code)
   end
+
+  def birthplace_miso
+    RakutenWebService::Ichiba::Item.search(keyword: birthplace.name + '産', genreId: '201213', NGKeyword: 'ふるさと納税').first(10) if birthplace
+  end
+
+  def birthplace_dashi
+    RakutenWebService::Ichiba::Item.search(keyword: birthplace.name + '産', genreId: '410994', NGKeyword: 'ふるさと納税').first(10) if birthplace
+  end
+
+  def living_place_miso
+    RakutenWebService::Ichiba::Item.search(keyword: living_place.name + '産', genreId: '201213', NGKeyword: 'ふるさと納税').first(10) if living_place
+  end
+
+  def living_place_dashi
+    RakutenWebService::Ichiba::Item.search(keyword: living_place.name + '産', genreId: '410994', NGKeyword: 'ふるさと納税').first(10) if living_place
+  end
 end
