@@ -63,7 +63,7 @@ class User < ApplicationRecord
   end
 
   def familiar_miso
-    self.regions.map do |region|
+    regions.map do |region|
       case region
       when '北海道'
         RakutenWebService::Ichiba::Item.search(keyword: region + '産 北海道', genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
@@ -86,7 +86,7 @@ class User < ApplicationRecord
   end
 
   def familiar_dashi
-    self.regions.map do |region|
+    regions.map do |region|
       case region
       when '北海道'
         RakutenWebService::Ichiba::Item.search(keyword: region + '産 かつお こんぶ', genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
@@ -108,10 +108,24 @@ class User < ApplicationRecord
     end
   end
 
+  def unfamiliar_miso
+    RakutenWebService::Ichiba::Item.search(keyword: unrelated_regions.sample(2).join(' '), genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1',  maxPrice: '1000').first(10)
+  end
+
+  def unfamiliar_dashi
+    RakutenWebService::Ichiba::Item.search(keyword: unrelated_regions.sample(2).join(' '), genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1',  maxPrice: '1000').first(10)
+  end
+
   def regions
     regions = []
-    regions << self.birthplace.area if self.birthplace
-    regions << self.living_place.area if self.living_place
+    regions << birthplace.area if birthplace
+    regions << living_place.area if living_place
     regions
+  end
+
+  def unrelated_regions
+    japan_regions = ['北海道', '東北', '関東', '中部', '関西', '中国', '四国', '九州']
+    unrelated_regions = japan_regions - regions
+    unrelated_regions
   end
 end
