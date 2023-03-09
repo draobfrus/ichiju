@@ -34,7 +34,7 @@ class MisosoupBasesController < ApplicationController
   end
 
   def recommend
-    @familiar_miso = [current_user.birthplace_miso, current_user.living_place_miso].compact.inject(:+).shuffle.first(3) if current_user.birthplace || current_user.living_place
-    @familiar_dashi = [current_user.birthplace_dashi, current_user.living_place_dashi].compact.inject(:+).shuffle.first(3) if current_user.birthplace || current_user.living_place
+    @familiar_miso = current_user.familiar_miso.flatten.sample(3) if current_user.regions
+    @familiar_dashi = current_user.familiar_dashi.flatten.sample(3) if current_user.regions
   end
 end
