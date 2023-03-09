@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import SelectController from "./select_controller"
 application.register("select", SelectController)
+
+import TabController from "./tab_controller"
+application.register("tab", TabController)

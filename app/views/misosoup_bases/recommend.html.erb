@@ -1,25 +1,38 @@
-安心のおみそ
-<% if @familiar_miso.present? %>
-  <%= render partial: 'miso', locals: { miso: @familiar_miso } %>
-<% else %>
-  <p>ありません</p>
-<% end %>
-安心のおだし
-<% if @familiar_dashi.present? %>
-  <%= render partial: 'dashi', locals: { dashi: @familiar_dashi } %>
-<% else %>
-  <p>ありません</p>
-<% end %>
+おすすめのおみそ、おだし
+<%# 2つのタブ class名にtab-activeがついているかどうかを切り替えする%>
+<div class="tabs justify-center text-center border-b m-10">
+  <a class="tab tab-lg tab-lifted tab-active" aria-current="page" data-tab-target="menu" data-action="click->tab#menuClick">安心みそだし</a>
+  <a class="tab tab-lg tab-lifted not-active" data-tab-target="menu" data-action="click->tab#menuClick">冒険みそだし</a>
+</div>
 
-冒険のおみそ
-<% if @unfamiliar_miso.present? %>
-  <%= render partial: 'miso', locals: { miso: @unfamiliar_miso } %>
-<% else %>
-  <p>ありません</p>
-<% end %>
-冒険のおだし
-<% if @unfamiliar_dashi.present? %>
-  <%= render partial: 'dashi', locals: { dashi: @unfamiliar_dashi } %>
-<% else %>
-  <p>ありません</p>
-<% end %>
+<body data-controller="tab">
+  <div data-tab-target="content">
+    安心のおみそ
+    <% if @familiar_miso.present? %>
+      <%= render partial: 'miso', locals: { miso: @familiar_miso } %>
+    <% else %>
+      <p>ありません</p>
+    <% end %>
+    安心のおだし
+    <% if @familiar_dashi.present? %>
+      <%= render partial: 'dashi', locals: { dashi: @familiar_dashi } %>
+    <% else %>
+      <p>ありません</p>
+    <% end %>
+  </div>
+
+  <div class="hidden" data-tab-target="content">
+    冒険のおみそ
+    <% if @unfamiliar_miso.present? %>
+      <%= render partial: 'miso', locals: { miso: @unfamiliar_miso } %>
+    <% else %>
+      <p>ありません</p>
+    <% end %>
+    冒険のおだし
+    <% if @unfamiliar_dashi.present? %>
+      <%= render partial: 'dashi', locals: { dashi: @unfamiliar_dashi } %>
+    <% else %>
+      <p>ありません</p>
+    <% end %>
+  </div>
+</body>
