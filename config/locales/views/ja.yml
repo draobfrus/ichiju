@@ -73,6 +73,9 @@ ja:
   misosoup_bases:
     index:
       title: "おみそ・おだし一覧"
+    recommend:
+      title: "おすすめのおみそ・おだし"
+      no_result: "おすすめがありません"
     new:
       title: "おみそ・おだしを追加"
       results: "検索結果"
