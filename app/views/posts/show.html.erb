@@ -5,9 +5,14 @@
       <%= image_tag @post.image.url %>
       <div class="card-body">
         <div class="flex gap-8 justify-end">
-          <%# <%= render 'like_button' %>
-          <%= turbo_frame_tag 'bookmark' do %>
-            <%= render 'bookmark', post: @post %>
+          <% if logged_in? %>
+            <% if current_user.own?(@post) %>
+              <%= render partial: 'twitter', locals: { post: @post } %>
+            <% end %>
+            <%# <%= render 'like_button' %>
+            <%= turbo_frame_tag 'bookmark' do %>
+              <%= render 'bookmark', post: @post %>
+            <% end %>
           <% end %>
         </div>
         <h3 class="card-title text-2xl lg:text-3xl font-bold"><%= @post.title %></h2>
