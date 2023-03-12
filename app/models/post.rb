@@ -33,6 +33,9 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { maximum: 255 }
   validates :image, presence: true
   validates :content, length: { maximum: 65_535 }
+  validates :status, presence: true
+
+  enum :status, { public: 0, private: 1 }, prefix: true
 
   scope :with_ingredient, ->(ingredient_name) { joins(:ingredients).where(ingredients: { name: ingredient_name }) }
   scope :title_contain, ->(word) { where('title LIKE ?', "%#{word}%") }
