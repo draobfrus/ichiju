@@ -8,7 +8,8 @@ ja:
     profile: "プロフィール"
     bookmark: "ブックマーク"
     posts: "一覧"
-    posting: "投稿"
+    posting: "投稿する"
+    post: "投稿"
     calendar: "カレンダー"
     misosoup_base: "みそだし"
     terms_of_use: "利用規約"
@@ -73,6 +74,9 @@ ja:
   misosoup_bases:
     index:
       title: "おみそ・おだし一覧"
+    recommend:
+      title: "おすすめのおみそ・おだし"
+      no_result: "おすすめがありません"
     new:
       title: "おみそ・おだしを追加"
       results: "検索結果"

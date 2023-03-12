@@ -94,7 +94,7 @@ gem 'sitemap_generator'
 gem 'aws-sdk-s3'
 
 # Cron jobs
-gem 'whenever'
+gem 'whenever', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

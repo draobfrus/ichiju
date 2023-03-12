@@ -62,7 +62,66 @@ class User < ApplicationRecord
     user_misosoup_bases.create!(misosoup_base_id: misosoup_base.id)
   end
 
-  def registered?(misosoup_base)
-    misosoup_bases.exists?(item_code: misosoup_base.item_code)
+  def familiar_miso
+    regions.map do |region|
+      case region
+      when '北海道'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 北海道', genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      when '東北'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 津軽 秋田 仙台 会津', genreId: '201213', orFlag: '1', maxPrice: '1000').first(30)
+      when '関東'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 江戸前', genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      when '中部'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 加賀 越後 佐渡 信州 東海麦', genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      when '関西'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 関西白', genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      when '中国'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 瀬戸内麦', genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      when '四国'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 讃岐味 御前', genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      when '九州'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 九州麦', genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      end
+    end
+  end
+
+  def familiar_dashi
+    regions.map do |region|
+      case region
+      when '北海道'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 かつお こんぶ', genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      when '東北'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 にぼし さば', genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      when '関東'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 かつお さば', genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      when '中部'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 さば むろあじ', genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      when '関西'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 こんぶ かつお さば にぼし', genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      when '中国', '四国', '九州'
+        RakutenWebService::Ichiba::Item.search(keyword: region + '産 にぼし やきあご かつお', genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1', maxPrice: '1000').first(30)
+      end
+    end
+  end
+
+  def unfamiliar_miso
+    RakutenWebService::Ichiba::Item.search(keyword: unrelated_regions.sample(2).join(' '), genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1',  maxPrice: '1000').first(10)
+  end
+
+  def unfamiliar_dashi
+    RakutenWebService::Ichiba::Item.search(keyword: unrelated_regions.sample(2).join(' '), genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1',  maxPrice: '1000').first(10)
+  end
+
+  def regions
+    regions = []
+    regions << birthplace.area if birthplace
+    regions << living_place.area if living_place
+    regions
+  end
+
+  def unrelated_regions
+    japan_regions = %w[北海道 東北 関東 中部 関西 中国 四国 九州]
+    unrelated_regions = japan_regions - regions
+    unrelated_regions
   end
 end

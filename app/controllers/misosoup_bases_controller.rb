@@ -7,7 +7,7 @@ class MisosoupBasesController < ApplicationController
     # params[:keyword]に合致したデータをresultsに格納する
     return if params[:keyword].blank?
 
-    @results = RakutenWebService::Ichiba::Item.search(keyword: params[:keyword], genreId: '100300').first(30)
+    @results = RakutenWebService::Ichiba::Item.search(keyword: params[:keyword], genreId: '100300', NGKeyword: 'ふるさと納税').first(30)
     @results = Kaminari.paginate_array(@results.to_a).page(params[:page]).per(5)
   end
 
@@ -31,5 +31,14 @@ class MisosoupBasesController < ApplicationController
     @misosoup_base = current_user.misosoup_bases.find(params[:id])
     @misosoup_base.destroy!
     redirect_to misosoup_bases_url, success: t('defaults.message.success', word: t('defaults.delete')), status: :see_other
+  end
+
+  def recommend
+    return unless current_user.regions
+
+    @familiar_miso = current_user.familiar_miso.flatten.sample(3)
+    @familiar_dashi = current_user.familiar_dashi.flatten.sample(3)
+    @unfamiliar_miso = current_user.unfamiliar_miso.flatten.sample(3)
+    @unfamiliar_dashi = current_user.unfamiliar_dashi.flatten.sample(3)
   end
 end

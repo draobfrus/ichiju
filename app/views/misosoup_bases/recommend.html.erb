@@ -1,0 +1,78 @@
+<% set_meta_tags title: t('.title') %>
+<div class="py-6 md:py-8">
+  <div class="max-w-screen-xl px-6 md:px-10 mx-auto">
+    <div class="mb-10 md:mb-16 text-center">
+      <h2 class="text-2xl lg:text-3xl font-bold mb-4 md:mb-6"><%= t('.title') %></h2>
+      <p>
+        気分に合わせて、おすすめのおみそ・おだしを選択できます。
+        <label for="info-modal">
+          <i class="fa-solid fa-circle-info cursor-pointer"></i>
+        </label>
+      </p>
+
+      <input type="checkbox" id="info-modal" class="modal-toggle">
+      <div class="modal">
+        <div class="modal-box relative">
+          <label for="info-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+          <h3 class="text-lg font-bold">「おすすめがありません」と表示される場合</h3>
+          <p class="py-4 text-start">
+            プロフィール変更画面から出身地・居住地を登録すると、おすすめが表示されます。
+            （登録は<%= link_to 'こちら', edit_profile_path, class: 'btn btn-link text-lg' %>）
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <%# 2つのタブ class名にtab-activeがついているかどうかを切り替えする%>
+    <div class="tabs justify-center text-center border-b m-6">
+      <a class="tab tab-lg tab-bordered tab-active" aria-current="page" data-tab-target="menu" data-action="click->tab#menuClick">安心みそだし</a>
+      <a class="tab tab-lg tab-bordered not-active" data-tab-target="menu" data-action="click->tab#menuClick">冒険みそだし</a>
+    </div>
+
+    <body data-controller="tab">
+      <div data-tab-target="content" class="mb-10 md:mb-16">
+        <p class="text-center mb-10">
+          馴染み深い土地のおみそ・おだしをチョイスしました。
+        </p>
+        <h2 class="text-2xl lg:text-3xl font-bold text-center mb-6 md:mb-10">
+          安心のおみそ
+        </h2>
+        <% if @familiar_miso.present? %>
+          <%= render partial: 'miso', locals: { miso: @familiar_miso } %>
+        <% else %>
+          <h2 class="text-md lg:text-xl font-bold text-center md:mb-6"><%= t('.no_result') %></h2>
+        <% end %>
+        <h2 class="text-2xl lg:text-3xl font-bold text-center my-6 md:my-10">
+          安心のおだし
+        </h2>
+        <% if @familiar_dashi.present? %>
+          <%= render partial: 'dashi', locals: { dashi: @familiar_dashi } %>
+        <% else %>
+          <h2 class="text-md lg:text-xl font-bold text-center md:mb-6"><%= t('.no_result') %></h2>
+        <% end %>
+      </div>
+
+      <div class="hidden mb-10 md:mb-16" data-tab-target="content">
+        <p class="text-center mb-10">
+          まだ住んだことがない土地のおみそ・おだしをチョイスしました。
+        </p>
+        <h2 class="text-2xl lg:text-3xl font-bold text-center mb-6 md:mb-10">
+          冒険のおみそ
+        </h2>
+        <% if @unfamiliar_miso.present? %>
+          <%= render partial: 'miso', locals: { miso: @unfamiliar_miso } %>
+        <% else %>
+          <h2 class="text-md lg:text-xl font-bold text-center md:mb-6"><%= t('.no_result') %></h2>
+        <% end %>
+        <h2 class="text-2xl lg:text-3xl font-bold text-center my-6 md:my-10">
+          冒険のおだし
+        </h2>
+        <% if @unfamiliar_dashi.present? %>
+          <%= render partial: 'dashi', locals: { dashi: @unfamiliar_dashi } %>
+        <% else %>
+          <h2 class="text-md lg:text-xl font-bold text-center md:mb-6"><%= t('.no_result') %></h2>
+        <% end %>
+      </div>
+    </body>
+  </div>
+</div>
