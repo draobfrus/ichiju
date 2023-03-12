@@ -125,6 +125,6 @@ class User < ApplicationRecord
 
   def unrelated_regions
     japan_regions = %w[北海道 東北 関東 中部 関西 中国 四国 九州]
-    unrelated_regions = japan_regions.difference(regions)
+    japan_regions.difference(regions)
   end
 end
