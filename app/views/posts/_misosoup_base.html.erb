@@ -1,14 +1,13 @@
-<% post.misosoup_bases.each do |misosoup_base| %>
-  <div class="grid grid-cols-1 gap-4 mb-10 mx-auto">
-    <div class="card bg-stone-200 p-4">
-        <%= image_tag misosoup_base.item_image_urls, size: '128x128', class: 'mx-auto' %>
-        <div class="card-body">
-          <div class="card-title">
-            <%= link_to misosoup_base.item_name, misosoup_base.item_url, class:'no-underline hover:underline' %>
-          </div>
-          <p>価格：<%= misosoup_base.item_price %>円</p>
-        </div>
+<div class="grid gap-4 sm:grid-cols-1 mt-8">
+  <% post.misosoup_bases.each do |misosoup_base| %>
+    <div class="flex flex-col rounded-lg border bg-white">
+    <%= image_tag misosoup_base.item_image_urls, size: '128x128', class: 'mx-auto py-6' %>
+    <div  class="flex flex-1 flex-col p-4 sm:p-6">
+      <h2 class="mb-2 text-lg font-semibold">
+        <%= link_to misosoup_base.item_name, misosoup_base.item_url, class:'no-underline hover:underline' %>
+      </h2>
+      <p class="mb-8">価格：<%= misosoup_base.item_price %>円</p>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
