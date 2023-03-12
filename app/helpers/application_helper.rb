@@ -22,7 +22,7 @@ module ApplicationHelper
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@draobfrus'
+        image: image_url('og_image.png')
       }
     }
   end
