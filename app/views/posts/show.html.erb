@@ -7,7 +7,7 @@
         <div class="flex gap-8 justify-end">
           <% if logged_in? %>
             <% if current_user.own?(@post) %>
-              <%= render 'twitter' %>
+              <%= render partial: 'twitter', locals: { post: @post } %>
             <% end %>
             <%# <%= render 'like_button' %>
             <%= turbo_frame_tag 'bookmark' do %>
