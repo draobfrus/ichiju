@@ -34,11 +34,11 @@ class MisosoupBasesController < ApplicationController
   end
 
   def recommend
-    if current_user.regions
-      @familiar_miso = current_user.familiar_miso.flatten.sample(3)
-      @familiar_dashi = current_user.familiar_dashi.flatten.sample(3)
-      @unfamiliar_miso = current_user.unfamiliar_miso.flatten.sample(3)
-      @unfamiliar_dashi = current_user.unfamiliar_dashi.flatten.sample(3)
-    end
+    return unless current_user.regions
+
+    @familiar_miso = current_user.familiar_miso.flatten.sample(3)
+    @familiar_dashi = current_user.familiar_dashi.flatten.sample(3)
+    @unfamiliar_miso = current_user.unfamiliar_miso.flatten.sample(3)
+    @unfamiliar_dashi = current_user.unfamiliar_dashi.flatten.sample(3)
   end
 end
