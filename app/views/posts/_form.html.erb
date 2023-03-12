@@ -28,9 +28,9 @@
     <div class="form-control mb-2">
       <%= f.label :misosoup_base_ids, class: 'label font-bold' %>
       <% if current_user.misosoup_bases.present? %>
-        <div class="grid grid-cols-1 gap-2 items-start mx-2">
-          <%= f.collection_check_boxes :misosoup_base_ids, current_user.misosoup_bases, :id, :item_name %>
-        </div>
+          <%= f.collection_check_boxes :misosoup_base_ids, current_user.misosoup_bases, :id, :item_name do |b| %>
+            <%= b.label(class: 'pb-2') { b.check_box(class: 'checkbox checkbox-primary mr-2') + b.text } %>
+          <% end %>
       <% else %>
         <p class="text-center">
           おみそ・おだしが登録されていません。
@@ -38,6 +38,14 @@
         </p>
       <% end %>
     </div>
+    <div class="form-control mb-2">
+      <%= f.label :status, class: 'label font-bold' %>
+      <p class="text-sm mb-6">※非公開にした投稿は、投稿一覧には表示されず、カレンダーでのみ確認ができます</p>
+      <%= f.collection_radio_buttons :status, Post.statuses_i18n, :first, :last do |b| %>
+        <%= b.label(class: 'flex items-start pb-2') { b.radio_button(class: 'radio radio-primary mr-2') + b.text } %>
+      <% end %>
+    </div>
+
     <%= f.submit t('defaults.posting'), class: 'btn btn-block btn-secondary mt-6 mb-10'%>
     <p class="text-stone-500 text-end text-sm">*必須項目</p>
   </div>
