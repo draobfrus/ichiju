@@ -6,10 +6,10 @@
           <%= image_tag 'footer_logo.png', class: 'h-24 w-32' %>
         </div>
       </div>
-      <nav class="flex flex-wrap justify-center gap-x-1 gap-y-2 md:justify-start md:gap-6">
-        <%= link_to t('defaults.terms_of_use'), terms_path, class: "btn btn-link text-azuki" %>
-        <%= link_to t('defaults.privacy_policy'), privacy_path, class: "btn btn-link text-azuki" %>
-        <%= link_to t('defaults.contact'), contact_path, target: :_black, rel: "noopener noreferrer", class: "btn btn-link text-azuki" %>
+      <nav class="flex flex-wrap justify-center gap-y-2 md:justify-start md:gap-6">
+        <%= link_to t('defaults.terms_of_use'), terms_path, class: "btn btn-link text-azuki text-xs sm:text-sm" %>
+        <%= link_to t('defaults.privacy_policy'), privacy_path, class: "btn btn-link text-azuki text-xs sm:text-sm" %>
+        <%= link_to t('defaults.contact'), contact_path, target: :_black, rel: "noopener noreferrer", class: "btn btn-link text-azuki text-xs sm:text-sm" %>
       </nav>
     </div>
     <div class="pt-4 pb-20 md:pb-12 text-center text-sm">© 2023 - ichiju. All rights reserved.</div>
