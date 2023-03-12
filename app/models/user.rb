@@ -105,11 +105,11 @@ class User < ApplicationRecord
   end
 
   def unfamiliar_miso
-    RakutenWebService::Ichiba::Item.search(keyword: unrelated_regions.sample(2).join(' '), genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1',  maxPrice: '1000').first(10)
+    RakutenWebService::Ichiba::Item.search(keyword: unrelated_regions.sample(2).join(' '), genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1',  maxPrice: '1000').first(30)
   end
 
   def unfamiliar_dashi
-    RakutenWebService::Ichiba::Item.search(keyword: unrelated_regions.sample(2).join(' '), genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1',  maxPrice: '1000').first(10)
+    RakutenWebService::Ichiba::Item.search(keyword: unrelated_regions.sample(2).join(' '), genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1',  maxPrice: '1000').first(30)
   end
 
   def regions
