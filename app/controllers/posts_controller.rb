@@ -8,7 +8,7 @@ class PostsController < ApplicationController
             else
               Post.all
             end
-    @posts = posts.includes(:user).order(created_at: :desc).page(params[:page])
+    @posts = posts.status_public.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def show
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 
   def search
     @search_form = SearchPostsForm.new(search_post_params)
-    @posts = @search_form.search.includes(:user).order(created_at: :desc).page(params[:page])
+    @posts = @search_form.search.status_public.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def bookmarks
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :image, :image_cache, ingredient_ids: [], misosoup_base_ids: [])
+    params.require(:post).permit(:title, :content, :image, :image_cache, :status, ingredient_ids: [], misosoup_base_ids: [])
   end
 
   def set_post
