@@ -62,6 +62,10 @@ class User < ApplicationRecord
     user_misosoup_bases.create!(misosoup_base_id: misosoup_base.id)
   end
 
+  def registered?(misosoup_base)
+    misosoup_bases.exists?(item_code: misosoup_base.item_code)
+  end
+
   def familiar_miso
     regions.map do |region|
       case region
@@ -105,11 +109,11 @@ class User < ApplicationRecord
   end
 
   def unfamiliar_miso
-    RakutenWebService::Ichiba::Item.search(keyword: unrelated_regions.sample(2).join(' '), genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1',  maxPrice: '1000').first(10)
+    RakutenWebService::Ichiba::Item.search(keyword: unrelated_regions.sample(2).join(' '), genreId: '201213', NGKeyword: 'ふるさと納税', orFlag: '1',  maxPrice: '1000').first(30)
   end
 
   def unfamiliar_dashi
-    RakutenWebService::Ichiba::Item.search(keyword: unrelated_regions.sample(2).join(' '), genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1',  maxPrice: '1000').first(10)
+    RakutenWebService::Ichiba::Item.search(keyword: unrelated_regions.sample(2).join(' '), genreId: '410994', NGKeyword: 'ふるさと納税', orFlag: '1',  maxPrice: '1000').first(30)
   end
 
   def regions
@@ -121,6 +125,6 @@ class User < ApplicationRecord
 
   def unrelated_regions
     japan_regions = %w[北海道 東北 関東 中部 関西 中国 四国 九州]
-    unrelated_regions = japan_regions.difference(regions)
+    japan_regions.difference(regions)
   end
 end

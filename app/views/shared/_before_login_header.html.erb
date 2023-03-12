@@ -1,13 +1,11 @@
-<header>
-  <div class="navbar bg-neutral-content">
-    <div class="navbar-start h-10 md:h-16">
-      <div class="flex justify-between items-start flex-wrap">
-        <%= link_to (image_tag 'header_logo.png'), root_path, class: 'h-15 w-24' %>
-      </div>
+<header class="navbar bg-neutral-content">
+  <div class="navbar-start h-10 md:h-16">
+    <div class="flex justify-between items-start flex-wrap">
+      <%= link_to (image_tag 'header_logo.png'), root_path, class: 'h-15 w-24' %>
     </div>
-    <div class="navbar-end">
-      <%= link_to t('defaults.login'), login_path, class: "btn btn-ghost normal-case rounded-full" %>
-      <%= link_to t('defaults.register'), new_user_path, class: "btn btn-ghost normal-case rounded-full" %>
-    </div>
+  </div>
+  <div class="navbar-end">
+    <%= link_to t('defaults.login'), login_path, class: "btn btn-ghost normal-case rounded-full" %>
+    <%= link_to t('defaults.register'), new_user_path, class: "btn btn-ghost normal-case rounded-full" %>
   </div>
 </header>
