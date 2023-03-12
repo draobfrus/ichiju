@@ -19,6 +19,7 @@ ja:
         image: "写真"
         ingredient_ids: "使用した食材"
         misosoup_base_ids: "使用したおみそ・おだし"
+        status: "公開設定"
   attributes:
     id: "ID"
     created_at: "作成日時"
@@ -28,3 +29,7 @@ ja:
       role:
         general: "一般"
         admin: "管理者"
+    post:
+      status:
+        public: "公開"
+        private: "非公開"
