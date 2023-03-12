@@ -62,6 +62,10 @@ class User < ApplicationRecord
     user_misosoup_bases.create!(misosoup_base_id: misosoup_base.id)
   end
 
+  def registered?(misosoup_base)
+    misosoup_bases.exists?(item_code: misosoup_base.item_code)
+  end
+
   def familiar_miso
     regions.map do |region|
       case region
