@@ -27,9 +27,27 @@
 
 ## 全体構成
 
-| バックエンド                        | フロントエンド                       | インフラ                               | API              |
-| :---------------------------------- | :----------------------------------- | :------------------------------------- | :--------------- |
-| Ruby(3.1.3)<br>Ruby on Rails(7.0.4) | TailwindCSS<br>DaisyUI<br>JavaScript | PostgreSQL<br>Heroku<br>AWS(Amazon S3) | 楽天市場検索 API |
+| バックエンド                                | フロントエンド                       | インフラ                               | API                          |
+| :------------------------------------------ | :----------------------------------- | :------------------------------------- | :--------------------------- |
+| Ruby(3.1.3)<br>Ruby on Rails(7.0.4)<br><br> | TailwindCSS<br>DaisyUI<br>JavaScript | PostgreSQL<br>Heroku<br>AWS(Amazon S3) | 楽天市場検索 API<br><br><br> |
+
+## 主要ライブラリ（gem)
+
+- `sorcery`（ユーザー登録、ログイン・ログアウト）
+- `jp_prefecture`（都道府県名の管理）
+- `simple_calendar`（カレンダー機能）
+- `carrierwave`（画像アップロード機能）
+- `rakuten_web_service`（楽天 API の使用）
+- `seed-fu`（データ作成）
+- `dotenv-rails`(開発環境の変数管理)
+- `meta-tags`（OGP、メタタグの作成）
+- `sitemap_generator`（サイトマップの作成）
+- `wheneveri`（定期 job の実行）
+- `rspec-rails`（テストフレームワーク）
+- `rubocop`（Lint チェック）
+- `kaminari`（ページネーション）
+- `draper`（デコレーター）
+- `enum_help`(enum の国際化)
 
 #### ■ 主な機能
 
