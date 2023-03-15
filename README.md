@@ -1,6 +1,9 @@
 # 一汁
 
-https://www.ichiju.jp
+![Ruby](https://img.shields.io/badge/Ruby-v3.1.3-red)
+![Rails](https://img.shields.io/badge/Rails-v7.0.4-critical)
+
+### https://www.ichiju.jp
 
 ## ■ サービス概要
 
