@@ -92,7 +92,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
   config.before :suite do
-    fixture_paths = "#{Rails.root}/db/fixtures/test"
+    fixture_path = "#{Rails.root}/db/fixtures/test"
     SeedFu.seed
   end
 end
