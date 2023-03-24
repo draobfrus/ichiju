@@ -20,6 +20,12 @@
 #
 FactoryBot.define do
   factory :user do
-    
+    sequence(:username) { |n| "user_#{n}" }
+    sequence(:email) { |n| "user_#{n}@example.com" }
+    password { 'password' }
+    password_confirmation { 'password' }
+    birthplace_code { 4 }
+    living_place_code { 7 }
+    role { :admin }
   end
 end
