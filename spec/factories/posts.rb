@@ -21,9 +21,10 @@
 #
 FactoryBot.define do
   factory :post do
-    title { "MyString" }
-    image { "MyString" }
-    content { "MyText" }
-    user { nil }
+    sequence(:title) { |n| "title_#{n}" }
+    sequence(:content) { |n| "content_#{n}" }
+    status { 0 }
+    image { File.open(File.join(Rails.root, 'spec/fixtures/test_image.png'))}
+    user
   end
 end
