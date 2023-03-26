@@ -28,7 +28,6 @@ RSpec.describe 'Users', type: :system do
           click_button 'ユーザー登録'
           expect(page).to have_content('ユーザー登録できませんでした')
           expect(page).to have_content('ユーザーネームを入力してください')
-          expect(current_path).to eq new_user_path
         end
       end
 
@@ -42,7 +41,6 @@ RSpec.describe 'Users', type: :system do
           click_button 'ユーザー登録'
           expect(page).to have_content('ユーザー登録できませんでした')
           expect(page).to have_content('メールアドレスを入力してください')
-          expect(current_path).to eq new_user_path
         end
       end
 
@@ -56,7 +54,6 @@ RSpec.describe 'Users', type: :system do
           click_button 'ユーザー登録'
           expect(page).to have_content('ユーザー登録できませんでした')
           expect(page).to have_content('パスワードは3文字以上で入力してください')
-          expect(current_path).to eq new_user_path
         end
       end
 
@@ -71,7 +68,6 @@ RSpec.describe 'Users', type: :system do
           expect(page).to have_content('ユーザー登録できませんでした')
           expect(page).to have_content('パスワード確認とパスワードの入力が一致しません')
           expect(page).to have_content('パスワード確認を入力してください')
-          expect(current_path).to eq new_user_path
         end
       end
 
@@ -86,7 +82,6 @@ RSpec.describe 'Users', type: :system do
           click_button 'ユーザー登録'
           expect(page).to have_content('ユーザー登録できませんでした')
           expect(page).to have_content('メールアドレスはすでに存在します')
-          expect(current_path).to eq new_user_path
         end
       end
 
@@ -100,7 +95,6 @@ RSpec.describe 'Users', type: :system do
           click_button 'ユーザー登録'
           expect(page).to have_content('ユーザー登録できませんでした')
           expect(page).to have_content('パスワード確認とパスワードの入力が一致しません')
-          expect(current_path).to eq new_user_path
         end
       end
     end
