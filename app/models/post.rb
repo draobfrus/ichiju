@@ -27,6 +27,8 @@ class Post < ApplicationRecord
   has_many :misosoup_bases, through: :post_misosoup_bases
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarking_users, through: :bookmarks, source: :user
+  has_many :likes, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
 
   mount_uploader :image, ImageUploader
 
