@@ -13,7 +13,7 @@
               <%= render 'like_button', post: @post %>
             <% end %>
             <%= turbo_frame_tag 'bookmark' do %>
-              <%= render 'bookmark', post: @post %>
+              <%= render 'bookmark_button', post: @post %>
             <% end %>
           <% end %>
         </div>
