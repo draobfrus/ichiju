@@ -55,8 +55,12 @@ class User < ApplicationRecord
     bookmark_posts.destroy(post)
   end
 
-  def bookmark?(post)
-    bookmark_posts.include?(post)
+  def like(post)
+    like_posts << post
+  end
+
+  def unlike(post)
+    like_posts.destroy(post)
   end
 
   def register(misosoup_base)

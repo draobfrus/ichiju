@@ -1,3 +1,6 @@
-<div class="flex gap-8 justify-start">
-  <%= link_to "#" do %><i class="fa-solid fa-heart fa-2x text-primary"></i><% end %>
-</div>
+<%= post.liking_users.count %>
+<% if post.liked_by?(current_user) %>
+  <%= render 'like', post: post %>
+<% else %>
+  <%= render 'unlike', post: post %>
+<% end %>

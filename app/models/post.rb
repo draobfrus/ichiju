@@ -60,6 +60,10 @@ class Post < ApplicationRecord
     bookmarking_users.include?(user)
   end
 
+  def liked_by?(user)
+    liking_users.include?(user)
+  end
+
   def start_time
     created_at
   end
