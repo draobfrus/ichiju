@@ -44,7 +44,7 @@ class Post < ApplicationRecord
   scope :content_contain, ->(word) { where('content LIKE ?', "%#{word}%") }
   scope :created_on, ->(date) { where(created_at: date.all_day) }
   scope :sort_by_created_at, -> { status_public.includes(:user).order(created_at: :desc) }
-  scope :sort_by_likes_count, -> { status_public.sort_by_created_at.includes(:liking_users).sort { |a, b| b.liking_users.size <=> a.liking_users.size } }
+  scope :sort_by_likes_count, -> { status_public.includes(:liking_users).order(created_at: :desc).sort { |a, b| b.liking_users.size <=> a.liking_users.size } }
 
   def save_with(ingredient_ids, misosoup_base_ids)
     ActiveRecord::Base.transaction do
