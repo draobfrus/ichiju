@@ -8,7 +8,13 @@ class PostsController < ApplicationController
             else
               Post.all
             end
-    @posts = posts.status_public.includes(:user).order(created_at: :desc).page(params[:page])
+    @posts = if params[:like_count]
+               # いいね順で@postsを表示
+               Kaminari.paginate_array(posts.sort_by_likes_count).page(params[:page])
+             else
+               # 新着順で@postsを表示
+               posts.sort_by_created_at.page(params[:page])
+             end
   end
 
   def show

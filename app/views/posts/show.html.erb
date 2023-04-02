@@ -9,9 +9,11 @@
             <% if current_user.own?(@post) %>
               <%= render partial: 'twitter', locals: { post: @post } %>
             <% end %>
-            <%# <%= render 'like_button' %>
+            <%= turbo_frame_tag 'like' do %>
+              <%= render 'like_button', post: @post %>
+            <% end %>
             <%= turbo_frame_tag 'bookmark' do %>
-              <%= render 'bookmark', post: @post %>
+              <%= render 'bookmark_button', post: @post %>
             <% end %>
           <% end %>
         </div>

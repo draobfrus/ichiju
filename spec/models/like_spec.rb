@@ -1,26 +1,26 @@
 # == Schema Information
 #
-# Table name: posts
+# Table name: likes
 #
 #  id         :bigint           not null, primary key
-#  content    :text
-#  image      :string           not null
-#  status     :integer          default("public"), not null
-#  title      :string(255)      not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  post_id    :bigint           not null
 #  user_id    :bigint           not null
 #
 # Indexes
 #
-#  index_posts_on_user_id  (user_id)
+#  index_likes_on_post_id              (post_id)
+#  index_likes_on_post_id_and_user_id  (post_id,user_id) UNIQUE
+#  index_likes_on_user_id              (user_id)
 #
 # Foreign Keys
 #
+#  fk_rails_...  (post_id => posts.id)
 #  fk_rails_...  (user_id => users.id)
 #
 require 'rails_helper'
 
-RSpec.describe Post, type: :model do
+RSpec.describe Like, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end

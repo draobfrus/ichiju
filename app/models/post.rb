@@ -5,7 +5,7 @@
 #  id         :bigint           not null, primary key
 #  content    :text
 #  image      :string           not null
-#  status     :integer          default(0), not null
+#  status     :integer          default("public"), not null
 #  title      :string(255)      not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -27,6 +27,8 @@ class Post < ApplicationRecord
   has_many :misosoup_bases, through: :post_misosoup_bases
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarking_users, through: :bookmarks, source: :user
+  has_many :likes, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
 
   mount_uploader :image, ImageUploader
 
@@ -41,6 +43,8 @@ class Post < ApplicationRecord
   scope :title_contain, ->(word) { where('title LIKE ?', "%#{word}%") }
   scope :content_contain, ->(word) { where('content LIKE ?', "%#{word}%") }
   scope :created_on, ->(date) { where(created_at: date.all_day) }
+  scope :sort_by_created_at, -> { status_public.includes(:user).order(created_at: :desc) }
+  scope :sort_by_likes_count, -> { status_public.includes(:liking_users).sort { |a, b| b.liking_users.size <=> a.liking_users.size } }
 
   def save_with(ingredient_ids, misosoup_base_ids)
     ActiveRecord::Base.transaction do
@@ -56,6 +60,10 @@ class Post < ApplicationRecord
 
   def bookmarked_by?(user)
     bookmarking_users.include?(user)
+  end
+
+  def liked_by?(user)
+    liking_users.include?(user)
   end
 
   def start_time

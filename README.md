@@ -118,7 +118,7 @@ URL は[こちら](https://www.figma.com/file/byXYHVgoi48ftTHrX3LmpG/%E4%B8%80%E
 
 ## ER 図
 
-[![ER Diagram](https://i.gyazo.com/9c940e6274c9eaeb057bbfec5e69db92.png)](https://gyazo.com/9c940e6274c9eaeb057bbfec5e69db92)
+[![ER Diagram](https://i.gyazo.com/c5c21dcc521fb9aecb41bb9ca25239e5.png)](https://gyazo.com/c5c21dcc521fb9aecb41bb9ca25239e5)
 <br>
 <br />
 
