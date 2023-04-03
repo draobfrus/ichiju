@@ -122,7 +122,7 @@ URL は[こちら](https://www.figma.com/file/byXYHVgoi48ftTHrX3LmpG/%E4%B8%80%E
 
 ## ER 図
 
-<a href="https://gyazo.com/c132b74bd9731f430b637148eb0baa52"><img src="https://i.gyazo.com/c132b74bd9731f430b637148eb0baa52.png" alt="Image from Gyazo" width="676"/></a>
+<a href="https://gyazo.com/2db4214dadfdf9b740fd74c1d9d1e0e9"><img src="https://i.gyazo.com/2db4214dadfdf9b740fd74c1d9d1e0e9.png" alt="Image from Gyazo" width="978"/></a>
 <br>
 <br />
 
