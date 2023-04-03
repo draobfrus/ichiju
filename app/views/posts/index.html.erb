@@ -3,17 +3,17 @@
   <div class="max-w-screen-xl px-2 md:px-10 mx-auto">
     <%= render partial: 'search_post_form', locals: { search_form: @search_form } %>
     <div class="mb-10 md:mb-16">
-      <h2 class="text-2xl lg:text-3xl font-bold text-center md:mb-6"><%= t('.title') %></h2>
+      <h2 class="text-2xl lg:text-3xl font-bold text-center mb-2 md:mb-6"><%= t('.title') %></h2>
+      <%= turbo_frame_tag "posts-list" do %>
+        <div class="btn-group flex justify-center mb-8 md:mb-12">
+          <%= link_to '新着順', posts_path, class: 'btn btn-accent btn-outline' %>
+          <%= link_to '人気順', posts_path(like_count: true), class: 'btn btn-accent btn-outline' %>
+        </div>
+        <div class="grid grid-cols-2 mb-20 md:mb-10 md:grid-cols-3 gap-x-4 lg:gap-x-8 gap-y-8 lg:gap-y-12">
+          <%= render @posts %>
+        </div>
+      <% end %>
     </div>
-    <%= turbo_frame_tag "posts-list" do %>
-      <div class="btn-group flex justify-center">
-        <%= link_to '新着順', posts_path, class: 'btn btn-accent btn-outline' %>
-        <%= link_to '人気順', posts_path(like_count: true), class: 'btn btn-accent btn-outline' %>
-      </div>
-      <div class="grid grid-cols-2 mb-20 md:mb-10 md:grid-cols-3 gap-x-4 lg:gap-x-8 gap-y-8 lg:gap-y-12">
-        <%= render @posts %>
-      </div>
-    <% end %>
   </div>
   <%= paginate @posts %>
 </div>
