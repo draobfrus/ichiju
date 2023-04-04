@@ -10,6 +10,9 @@
         <%= link_to t('defaults.terms_of_use'), terms_path, class: "btn btn-link text-azuki text-xs sm:text-sm" %>
         <%= link_to t('defaults.privacy_policy'), privacy_path, class: "btn btn-link text-azuki text-xs sm:text-sm" %>
         <%= link_to t('defaults.contact'), contact_path, target: :_black, rel: "noopener noreferrer", class: "btn btn-link text-azuki text-xs sm:text-sm" %>
+        <%= link_to twitter_account_path, target: '_blank', rel: "noopener noreferrer", class: "btn btn-ghost text-xs sm:text-sm" do %>
+          <i class="fa-brands fa-twitter fa-2x" style='color: #3399FF;'></i>
+        <% end %>
       </nav>
     </div>
     <div class="pt-4 pb-20 md:pb-12 text-center text-xs sm:text-sm">© 2023 - ichiju. All rights reserved.</div>
