@@ -8,7 +8,7 @@ class PostsController < ApplicationController
             else
               Post.all
             end
-    @posts = if params[:like_count]
+    @posts = if params[:popular]
                # いいね順で@postsを表示
                Kaminari.paginate_array(posts.sort_by_likes_count).page(params[:page])
              else
