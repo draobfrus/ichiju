@@ -12,6 +12,3 @@ application.register("select", SelectController)
 
 import TabController from "./tab_controller"
 application.register("tab", TabController)
-
-import SortController from "./sort_controller"
-application.register("sort", SortController)
