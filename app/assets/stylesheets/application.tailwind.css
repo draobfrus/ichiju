@@ -12,39 +12,7 @@
     @apply mt-4 w-4 h-4;
   }
 
-  /* Kaminari */
-  .current {
-    @apply border-none pointer-events-none;
-  }
-
   /* Simple Calendar */
-  .day {
-  }
-  .wday-0 {
-  }
-  .wday-1 {
-  }
-  .wday-2 {
-  }
-  .wday-3 {
-  }
-  .wday-4 {
-  }
-  .wday-5 {
-  }
-  .wday-6 {
-  }
-
-  .today {
-  }
-  .past {
-  }
-  .future {
-  }
-
-  .start-date {
-  }
-
   .prev-month {
     @apply bg-stone-300;
   }
@@ -54,7 +22,6 @@
   .current-month {
     @apply font-bold;
   }
-
   .has-events {
     @apply cursor-pointer hover:bg-stone-100 active:bg-stone-200;
   }
