@@ -34,11 +34,11 @@ ja:
       short: "%Y年%m月%d日"
   views:
     pagination:
-      first: "最初"
-      last: "最後"
-      previous: "<<"
-      next: ">>"
-      truncate: "……"
+      first: "<<"
+      last: ">>"
+      previous: "<"
+      next: ">"
+      truncate: "…"
   static_pages:
     top:
       title: "毎日に、あたたかな彩りを。"

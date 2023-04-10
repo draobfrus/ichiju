@@ -4,7 +4,7 @@
     <div class="card max-w-xl border rounded-xl mx-auto">
       <%= image_tag @post.image.url %>
       <div class="card-body">
-        <div class="flex gap-8 justify-end">
+        <div class="mb-10 md:mb-16 flex gap-8 justify-center md:justify-end">
           <% if logged_in? %>
             <% if current_user.own?(@post) %>
               <%= render partial: 'twitter', locals: { post: @post } %>
