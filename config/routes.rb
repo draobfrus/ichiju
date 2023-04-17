@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       get 'search'
       get 'bookmarks'
     end
+    resources :comments, shallow:true, only: %i[new create edit update destroy]
   end
 
   resource :profile, only: %i[show edit update]
