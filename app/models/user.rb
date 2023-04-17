@@ -22,6 +22,7 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :user_misosoup_bases, dependent: :destroy
   has_many :misosoup_bases, through: :user_misosoup_bases
   has_many :bookmarks, dependent: :destroy

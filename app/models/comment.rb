@@ -3,7 +3,7 @@
 # Table name: comments
 #
 #  id         :bigint           not null, primary key
-#  string     :text             not null
+#  body       :string(255)      not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  post_id    :bigint           not null
@@ -22,4 +22,6 @@
 class Comment < ApplicationRecord
   belongs_to :post
   belongs_to :user
+
+  validates :body, presence: true, length: { maximum: 255 }
 end
