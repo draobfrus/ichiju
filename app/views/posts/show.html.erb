@@ -28,6 +28,8 @@
     <% if logged_in? %>
       <% if current_user.own?(@post) %>
         <%= render 'crud_menus' %>
+        <%= render 'comments/comments' %>
+        <%= render 'comments/form' %>
       <% end %>
     <% end %>
   </div>
