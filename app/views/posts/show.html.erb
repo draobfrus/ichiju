@@ -28,9 +28,9 @@
     <% if logged_in? %>
       <% if current_user.own?(@post) %>
         <%= render 'crud_menus' %>
-        <%= render 'comments/comments' %>
-        <%= render 'comments/form' %>
       <% end %>
+      <%= render 'comments/comments' %>
+      <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
     <% end %>
   </div>
 </div>
