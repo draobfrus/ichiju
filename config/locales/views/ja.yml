@@ -29,7 +29,6 @@ ja:
       deleted: "%{word}を削除しました"
       delete?: "%{word}を削除しますか？"
       are_you_sure: "%{word}してよろしいですか？"
-      must: "%{word}は必ず入力してください"
   time:
     formats:
       short: "%Y年%m月%d日"
