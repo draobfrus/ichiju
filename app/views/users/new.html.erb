@@ -9,22 +9,21 @@
         <%= render 'shared/error_messages', object: f.object %>
         <div class="flex flex-col gap-4 p-4 md:p-8">
           <div class="form-control mb-2">
-            <%= f.label :username, '*ユーザーネーム', class: 'label font-bold' %>
-            <%= f.text_field :username, class: 'input border-azuki w-full' %>
+            <%= f.label :username, 'ユーザーネーム', class: 'label font-bold' %>
+            <%= f.text_field :username, class: 'input border-azuki w-full placeholder:text-stone-400', placeholder: '必須' %>
           </div>
           <div class="form-control mb-2">
-            <%= f.label :email, '*メールアドレス', class: 'label font-bold' %>
-            <%= f.email_field :email, class: 'input border-azuki w-full' %>
+            <%= f.label :email, 'メールアドレス', class: 'label font-bold' %>
+            <%= f.email_field :email, class: 'input border-azuki w-full placeholder:text-stone-400', placeholder: '必須' %>
           </div>
           <div class="form-control mb-2">
-            <%= f.label :password, '*パスワード', class: 'label font-bold' %>
-            <%= f.password_field :password, class: 'input border-azuki w-full' %>
+            <%= f.label :password, 'パスワード', class: 'label font-bold' %>
+            <%= f.password_field :password, class: 'input border-azuki w-full placeholder:text-stone-400', placeholder: '必須/8文字以上' %>
           </div>
           <div class="form-control mb-2">
-            <%= f.label :password_confirmation, '*パスワード確認', class: 'label font-bold' %>
-            <%= f.password_field :password_confirmation, class: 'input border-azuki w-full' %>
+            <%= f.label :password_confirmation, 'パスワード確認', class: 'label font-bold' %>
+            <%= f.password_field :password_confirmation, class: 'input border-azuki w-full placeholder:text-stone-400', placeholder: '必須/8文字以上' %>
           </div>
-          <p class="text-stone-500 text-end text-sm">*必須項目</p>
           <%= f.submit (t "defaults.register"), class: 'btn btn-block btn-secondary mt-10 mb-16 lg:mb-10'%>
         </div>
       <% end %>

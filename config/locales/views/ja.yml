@@ -4,7 +4,7 @@ ja:
     login: "ログイン"
     logout: "ログアウト"
     register: "ユーザー登録"
-    register_and_login: "ユーザー登録とログイン"
+    register_and_login: "ユーザー登録/ログイン"
     profile: "プロフィール"
     bookmark: "ブックマーク"
     posts: "一覧"
@@ -21,13 +21,13 @@ ja:
     search: "検索"
     message:
       require_login: "ログインしてください"
-      success: "%{word}に成功しました"
+      success: "%{word}しました"
       danger: "%{word}できませんでした"
       registered: "%{word}を登録しました"
       updated: "更新しました"
       not_updated: "更新できませんでした"
-      deleted: "削除しました"
-      delete?: "削除しますか？"
+      deleted: "%{word}を削除しました"
+      delete?: "%{word}を削除しますか？"
       are_you_sure: "%{word}してよろしいですか？"
   time:
     formats:

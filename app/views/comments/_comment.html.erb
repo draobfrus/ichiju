@@ -1,0 +1,23 @@
+<%= turbo_frame_tag dom_id(comment) do %>
+  <div class="relative chat chat-start m-6">
+    <div class="chat-image avatar">
+      <div class="w-10 rounded-full">
+        <%= image_tag comment.user.avatar_url %>
+      </div>
+    </div>
+    <div class="chat-header">
+      <%= comment.user.username %>
+      <time class="text-xs opacity-50">(<%= I18n.l(comment.created_at, format: :long) %>)</time>
+    </div>
+    <div class="chat-bubble chat-bubble-secondary">
+      <%= comment.body %>
+    </div>
+    <% if current_user.own?(comment) %>
+      <div class="absolute right-0 bottom-0">
+        <%= link_to comment_path(comment), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete?', word: Comment.model_name.human) } do %>
+          <i class="fa-solid fa-trash cursor-pointer hover:text-accent"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -19,6 +19,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments
   end
 
   def new
@@ -50,7 +52,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy!
-    redirect_to posts_url, success: t('defaults.message.success', word: t('defaults.delete')), status: :see_other
+    redirect_to posts_url, success: t('defaults.message.deleted', word: Post.model_name.human), status: :see_other
   end
 
   def search

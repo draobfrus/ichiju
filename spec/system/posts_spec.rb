@@ -54,7 +54,7 @@ RSpec.describe 'Posts', type: :system do
           fill_in '*タイトル', with: 'title'
           attach_file '*写真', "#{Rails.root}/spec/fixtures/test_image.png"
           click_button '投稿する'
-          expect(page).to have_content ('投稿に成功しました')
+          expect(page).to have_content ('投稿しました')
           expect(current_path).to eq posts_path
         end
       end
@@ -89,7 +89,7 @@ RSpec.describe 'Posts', type: :system do
           visit edit_post_path(post)
           fill_in '*タイトル', with: 'new_title'
           click_button '投稿する'
-          expect(page).to have_content ('更新に成功しました')
+          expect(page).to have_content ('更新しました')
         end
       end
 
@@ -110,8 +110,8 @@ RSpec.describe 'Posts', type: :system do
       it '投稿の削除が成功する' do
         visit post_path(post)
         click_link '削除'
-        expect(page.accept_confirm).to eq '削除しますか？'
-        expect(page).to have_content ('削除に成功しました')
+        expect(page.accept_confirm).to eq '投稿を削除しますか？'
+        expect(page).to have_content ('投稿を削除しました')
       end
     end
 

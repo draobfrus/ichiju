@@ -10,7 +10,7 @@ RSpec.describe 'UserSessions', type: :system do
         fill_in 'メールアドレス', with: user.email
         fill_in 'パスワード', with: 'password'
         click_button 'ログイン'
-        expect(page).to have_content ('ログインに成功しました')
+        expect(page).to have_content ('ログインしました')
         expect(current_path).to eq posts_path
       end
     end
@@ -42,9 +42,9 @@ RSpec.describe 'UserSessions', type: :system do
     context 'ログアウトボタンをクリック' do
       it 'ログアウト処理が成功する' do
         login_as(user)
-        find('.btn-ghost').click
+        find('.normal-case').click
         click_link 'ログアウト'
-        expect(page).to have_content ('ログアウトに成功しました')
+        expect(page).to have_content ('ログアウトしました')
         expect(current_path).to eq root_path
       end
     end

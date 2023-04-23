@@ -30,7 +30,7 @@ class MisosoupBasesController < ApplicationController
   def destroy
     @misosoup_base = current_user.misosoup_bases.find(params[:id])
     @misosoup_base.destroy!
-    redirect_to misosoup_bases_url, success: t('defaults.message.success', word: t('defaults.delete')), status: :see_other
+    redirect_to misosoup_bases_url, success: t('defaults.message.deleted', word: MisosoupBase.model_name.human), status: :see_other
   end
 
   def recommend
