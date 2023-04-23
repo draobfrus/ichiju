@@ -4,7 +4,7 @@ ja:
     login: "ログイン"
     logout: "ログアウト"
     register: "ユーザー登録"
-    register_and_login: "ユーザー登録とログイン"
+    register_and_login: "ユーザー登録/ログイン"
     profile: "プロフィール"
     bookmark: "ブックマーク"
     posts: "一覧"

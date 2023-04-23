@@ -8,12 +8,12 @@ RSpec.describe 'Users', type: :system do
       context 'フォームの入力値が正常' do
         it 'ユーザーの新規登録が成功する' do
           visit new_user_path
-          fill_in '*ユーザーネーム', with: 'username'
-          fill_in '*メールアドレス', with: 'email@example.com'
-          fill_in '*パスワード', with: 'password'
-          fill_in '*パスワード確認', with: 'password'
+          fill_in 'ユーザーネーム', with: 'username'
+          fill_in 'メールアドレス', with: 'email@example.com'
+          fill_in 'パスワード', with: 'password'
+          fill_in 'パスワード確認', with: 'password'
           click_button 'ユーザー登録'
-          expect(page).to have_content('ユーザー登録とログインに成功しました')
+          expect(page).to have_content('ユーザー登録/ログインしました')
           expect(current_path).to eq posts_path
         end
       end
@@ -21,10 +21,10 @@ RSpec.describe 'Users', type: :system do
       context 'ユーザーネームが未入力' do
         it 'ユーザーの新規登録が失敗する' do
           visit new_user_path
-          fill_in '*ユーザーネーム', with: ''
-          fill_in '*メールアドレス', with: 'email@example.com'
-          fill_in '*パスワード', with: 'password'
-          fill_in '*パスワード確認', with: 'password'
+          fill_in 'ユーザーネーム', with: ''
+          fill_in 'メールアドレス', with: 'email@example.com'
+          fill_in 'パスワード', with: 'password'
+          fill_in 'パスワード確認', with: 'password'
           click_button 'ユーザー登録'
           expect(page).to have_content('ユーザー登録できませんでした')
           expect(page).to have_content('ユーザーネームを入力してください')
@@ -34,10 +34,10 @@ RSpec.describe 'Users', type: :system do
       context 'メールアドレスが未入力' do
         it 'ユーザーの新規登録が失敗する' do
           visit new_user_path
-          fill_in '*ユーザーネーム', with: 'username'
-          fill_in '*メールアドレス', with: ''
-          fill_in '*パスワード', with: 'password'
-          fill_in '*パスワード確認', with: 'password'
+          fill_in 'ユーザーネーム', with: 'username'
+          fill_in 'メールアドレス', with: ''
+          fill_in 'パスワード', with: 'password'
+          fill_in 'パスワード確認', with: 'password'
           click_button 'ユーザー登録'
           expect(page).to have_content('ユーザー登録できませんでした')
           expect(page).to have_content('メールアドレスを入力してください')
@@ -47,23 +47,23 @@ RSpec.describe 'Users', type: :system do
       context 'パスワードが未入力' do
         it 'ユーザーの新規登録が失敗する' do
           visit new_user_path
-          fill_in '*ユーザーネーム', with: 'username'
-          fill_in '*メールアドレス', with: 'email@example.com'
-          fill_in '*パスワード', with: ''
-          fill_in '*パスワード確認', with: 'password'
+          fill_in 'ユーザーネーム', with: 'username'
+          fill_in 'メールアドレス', with: 'email@example.com'
+          fill_in 'パスワード', with: ''
+          fill_in 'パスワード確認', with: 'password'
           click_button 'ユーザー登録'
           expect(page).to have_content('ユーザー登録できませんでした')
-          expect(page).to have_content('パスワードは3文字以上で入力してください')
+          expect(page).to have_content('パスワードは8文字以上で入力してください')
         end
       end
 
       context 'パスワード確認が未入力' do
         it 'ユーザーの新規登録が失敗する' do
           visit new_user_path
-          fill_in '*ユーザーネーム', with: 'username'
-          fill_in '*メールアドレス', with: 'email@example.com'
-          fill_in '*パスワード', with: 'password'
-          fill_in '*パスワード確認', with: ''
+          fill_in 'ユーザーネーム', with: 'username'
+          fill_in 'メールアドレス', with: 'email@example.com'
+          fill_in 'パスワード', with: 'password'
+          fill_in 'パスワード確認', with: ''
           click_button 'ユーザー登録'
           expect(page).to have_content('ユーザー登録できませんでした')
           expect(page).to have_content('パスワード確認とパスワードの入力が一致しません')
@@ -75,10 +75,10 @@ RSpec.describe 'Users', type: :system do
         it 'ユーザーの新規登録が失敗する' do
           existed_user = create(:user)
           visit new_user_path
-          fill_in '*ユーザーネーム', with: 'username'
-          fill_in '*メールアドレス', with: existed_user.email
-          fill_in '*パスワード', with: 'password'
-          fill_in '*パスワード確認', with: 'password'
+          fill_in 'ユーザーネーム', with: 'username'
+          fill_in 'メールアドレス', with: existed_user.email
+          fill_in 'パスワード', with: 'password'
+          fill_in 'パスワード確認', with: 'password'
           click_button 'ユーザー登録'
           expect(page).to have_content('ユーザー登録できませんでした')
           expect(page).to have_content('メールアドレスはすでに存在します')
@@ -88,10 +88,10 @@ RSpec.describe 'Users', type: :system do
       context 'パスワードとパスワード確認が不一致' do
         it 'ユーザーの新規登録が失敗する' do
           visit new_user_path
-          fill_in '*ユーザーネーム', with: 'username'
-          fill_in '*メールアドレス', with: 'email@example.com'
-          fill_in '*パスワード', with: 'password'
-          fill_in '*パスワード確認', with: 'wordpass'
+          fill_in 'ユーザーネーム', with: 'username'
+          fill_in 'メールアドレス', with: 'email@example.com'
+          fill_in 'パスワード', with: 'password'
+          fill_in 'パスワード確認', with: 'wordpass'
           click_button 'ユーザー登録'
           expect(page).to have_content('ユーザー登録できませんでした')
           expect(page).to have_content('パスワード確認とパスワードの入力が一致しません')
