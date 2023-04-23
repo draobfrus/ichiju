@@ -1,12 +1,12 @@
-<div class="chat chat-start">
+<div class="chat chat-start m-6">
   <div class="chat-image avatar">
     <div class="w-10 rounded-full">
-      <%= image_tag "default_avatar.png" %>
+      <%= image_tag comment.user.avatar_url %>
     </div>
   </div>
   <div class="chat-header">
-    comment.user.username
-    <time class="text-xs opacity-50">yyyy/mm/dd</time>
+    <%= comment.user.username %>
+    <time class="text-xs opacity-50">(<%= I18n.l(comment.created_at, format: :long) %>)</time>
   </div>
-  <div class="chat-bubble chat-bubble-secondary">comment.body</div>
+  <div class="chat-bubble chat-bubble-secondary"><%= comment.body %></div>
 </div>

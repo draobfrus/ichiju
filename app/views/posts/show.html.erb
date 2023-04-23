@@ -7,13 +7,13 @@
         <div class="mb-10 md:mb-16 flex gap-8 justify-center md:justify-end">
           <% if logged_in? %>
             <% if current_user.own?(@post) %>
-              <%= render partial: 'twitter', locals: { post: @post } %>
+              <%= render partial: 'posts/twitter', locals: { post: @post } %>
             <% end %>
             <%= turbo_frame_tag 'like' do %>
-              <%= render 'like_button', post: @post %>
+              <%= render 'posts/like_button', post: @post %>
             <% end %>
             <%= turbo_frame_tag 'bookmark' do %>
-              <%= render 'bookmark_button', post: @post %>
+              <%= render 'posts/bookmark_button', post: @post %>
             <% end %>
           <% end %>
         </div>
@@ -21,15 +21,15 @@
         <p>by <%=link_to @post.user.username, "#" %></p>
         <p><%= simple_format(@post.content) %></p>
         <p class="flex justify-end mb-4"><%= I18n.l(@post.created_at, format: :short) %></p>
-        <%= render partial: 'ingredient', locals: { post: @post } %>
-        <%= render partial: 'misosoup_base', locals: { post: @post } %>
+        <%= render partial: 'posts/ingredient', locals: { post: @post } %>
+        <%= render partial: 'posts/misosoup_base', locals: { post: @post } %>
       </div>
     </div>
     <% if logged_in? %>
       <% if current_user.own?(@post) %>
-        <%= render 'crud_menus' %>
+        <%= render 'posts/crud_menus' %>
       <% end %>
-      <%= render 'comments/comments' %>
+      <%= render partial: 'comments/comments' %>
       <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
     <% end %>
   </div>

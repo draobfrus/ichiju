@@ -21,7 +21,7 @@ ja:
     search: "検索"
     message:
       require_login: "ログインしてください"
-      success: "%{word}に成功しました"
+      success: "%{word}しました"
       danger: "%{word}できませんでした"
       registered: "%{word}を登録しました"
       updated: "更新しました"

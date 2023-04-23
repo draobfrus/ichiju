@@ -1,7 +1,14 @@
 class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
-    @comment.save
+    @post = @comment.post
+
+    if @comment.save
+      redirect_to post_url(@post), success: t('defaults.message.success', word: Comment.model_name.human)
+    else
+      flash.now[:danger] = t('defaults.message.danger', word: Comment.model_name.human)
+      render 'posts/show', status: :unprocessable_entity
+    end
   end
 
   def edit
