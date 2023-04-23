@@ -25,7 +25,8 @@ class CommentsController < ApplicationController
   def destroy
     @comment = current_user.comments.find(params[:id])
     @comment.destroy!
-    redirect_to post_url(@comment.post), success: t('defaults.message.deleted', word: Comment.model_name.human), status: :see_other
+    flash.now.notice = 'OK'
+    # redirect_to post_url(@comment.post), success: t('defaults.message.deleted', word: Comment.model_name.human), status: :see_other
   end
 
   private
