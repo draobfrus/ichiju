@@ -4,10 +4,13 @@ class CommentsController < ApplicationController
     @post = @comment.post
 
     if @comment.save
-      redirect_to post_url(@post), success: t('defaults.message.success', word: Comment.model_name.human)
+      # render 'comment_change'
+      flash.now.notice = 'OK'
+      # redirect_to post_url(@post), success: t('defaults.message.success', word: Comment.model_name.human)
     else
-      flash.now[:danger] = t('defaults.message.danger', word: Comment.model_name.human)
-      render 'posts/show', status: :unprocessable_entity
+      # flash.now[:danger] = t('defaults.message.danger', word: Comment.model_name.human)
+      # render 'posts/show', status: :unprocessable_entity
+      redirect_to post_url(@post), danger: t('defaults.message.must', word: Comment.model_name.human)
     end
   end
 
