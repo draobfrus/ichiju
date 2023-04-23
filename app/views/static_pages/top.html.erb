@@ -91,8 +91,10 @@
     </div>
   </div>
 
-  <div class="border-t border-ohagi pt-10 pb-20 text-center">
-    <p class="pb-6">今日から始めてみませんか？</p>
-    <%= link_to 'ユーザー登録して始める', new_user_path, class: 'btn btn-secondary md:btn-lg'%>
-  </div>
+  <% unless logged_in? %>
+    <div class="border-t border-ohagi pt-10 pb-20 text-center">
+      <p class="pb-6">今日から始めてみませんか？</p>
+      <%= link_to 'ユーザー登録して始める', new_user_path, class: 'btn btn-secondary md:btn-lg'%>
+    </div>
+  <% end %>
 </div>
