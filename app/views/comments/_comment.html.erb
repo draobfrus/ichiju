@@ -13,7 +13,7 @@
   </div>
   <% if current_user.own?(comment) %>
     <div class="absolute right-0 bottom-0">
-      <%= link_to comment_path(comment), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete?') } do %>
+      <%= link_to comment_path(comment), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete?', word: Comment.model_name.human) } do %>
         <i class="fa-solid fa-trash cursor-pointer hover:text-accent"></i>
       <% end %>
     </div>

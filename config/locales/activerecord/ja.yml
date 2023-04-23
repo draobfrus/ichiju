@@ -4,6 +4,7 @@ ja:
       user: "ユーザー"
       post: "投稿"
       comment: "コメント"
+      misosoup_base: "おみそ・おだし"
     attributes:
       user:
         username: "ユーザーネーム"

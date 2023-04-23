@@ -22,7 +22,7 @@
           <p class="mb-8">価格：<%= misosoup_base.item_price %>円</p>
           <div class="mt-auto flex items-end justify-end">
             <div class="flex items-center gap-2">
-              <%= link_to misosoup_base_path(misosoup_base), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete?') } do %>
+              <%= link_to misosoup_base_path(misosoup_base), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete?', word: MisosoupBase.model_name.human) } do %>
                 <button class="btn btn-ghost md:btn-lg">
                   <i class="fa-solid fa-trash md:fa-2x"></i>
                 </button>
