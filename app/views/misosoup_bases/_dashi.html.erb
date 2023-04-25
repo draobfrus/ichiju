@@ -4,7 +4,7 @@
       <%= image_tag(d['mediumImageUrls'][0], size: '128x128', class: 'mx-auto py-6') %>
       <div  class="flex flex-1 flex-col p-4 sm:p-6">
         <h2 class="mb-2 text-lg font-semibold">
-          <%= link_to d['itemName'], d['itemUrl'], class:'no-underline hover:underline' %>
+          <%= link_to d['itemName'], d['itemUrl'], target: '_blank', rel: 'noopener noreferrer', class: 'no-underline hover:underline' %>
         </h2>
         <p>価格：<%= d['itemPrice'] %>円</p>
         <div class="mt-auto flex items-end justify-end">
