@@ -17,7 +17,7 @@
         <%= image_tag misosoup_base.item_image_urls, size: '128x128', class: 'mx-auto py-6' %>
         <div  class="flex flex-1 flex-col p-4 sm:p-6">
           <h2 class="mb-2 text-lg font-semibold">
-            <%= link_to misosoup_base.item_name, misosoup_base.item_url, class:'no-underline hover:underline' %>
+            <%= link_to misosoup_base.item_name, misosoup_base.item_url, target: '_blank', rel: 'noopener noreferrer', class: 'no-underline hover:underline' %>
           </h2>
           <p class="mb-8">価格：<%= misosoup_base.item_price %>円</p>
           <div class="mt-auto flex items-end justify-end">
