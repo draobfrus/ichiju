@@ -3,7 +3,7 @@ RakutenWebService.configure do |c|
   c.application_id = ENV.fetch('RWS_APPLICATION_ID', nil)
 
   # (任意) 楽天アフィリエイトID
-  # c.affiliate_id = 'YOUR_AFFILIATE_ID' # default: nil
+  c.affiliate_id = 'YOUR_AFFILIATE_ID' # default: nil
 
   # (任意) リクエストのリトライ回数
   # 一定期間の間のリクエスト数が制限を超えた時、APIはリクエスト過多のエラーを返す。
