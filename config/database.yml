@@ -80,6 +80,13 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+# heroku
+# production:
+#   <<: *default
+#   url: <%= ENV['HEROKU_POSTGRESQL_PINK_URL'] %>
+# magia
 production:
-  <<: *default
-  url: <%= ENV['HEROKU_POSTGRESQL_PINK_URL'] %>
+  database: cldeb4iml00i09tryczrrepuk
+  username: cldeb4imj00hy9try49vq3vss
+  password: <%= ENV['ICHIJU_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
