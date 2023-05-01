@@ -8,7 +8,6 @@
 #  item_name       :string
 #  item_price      :integer
 #  item_url        :string
-#  type            :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
